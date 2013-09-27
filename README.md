@@ -13,7 +13,7 @@ Quickstart
 
 3. Run 'init.sh'
 
-4. Login to http://localhost:8080/business-central  (u:demo / p:bpmsuite)
+4. Login to http://localhost:8080/business-central  (u:erics / p:bpmsuite)
 
 5. Enjoy JBoss BPM Suite!
 
