@@ -94,10 +94,6 @@ echo "  - enabling demo accounts role setup in application-roles.properties file
 echo
 cp $SUPPORT_DIR/application-roles.properties $SERVER_CONF
 
-echo "  - configuring standalone.xml file..."
-echo
-cp $SUPPORT_DIR/standalone.xml $SERVER_CONF
-
 # Add execute permissions to the standalone.sh script.
 echo "  - making sure standalone.sh for server is executable..."
 echo
