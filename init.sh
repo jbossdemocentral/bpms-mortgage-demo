@@ -6,7 +6,7 @@ PRODUCT="JBoss BPM Suite"
 JBOSS_HOME=./target/jboss-eap-6.1
 SERVER_DIR=$JBOSS_HOME/standalone/deployments/
 SERVER_CONF=$JBOSS_HOME/standalone/configuration/
-SERVER_BIN=$JBOSS_HOME/bin/
+SERVER_BIN=$JBOSS_HOME/bin
 SRC_DIR=./installs
 SUPPORT_DIR=./support
 PRJ_DIR=./projects/mortage-demo
@@ -96,14 +96,18 @@ cp $SUPPORT_DIR/application-roles.properties $SERVER_CONF
 
 echo "  - setting up demo projects..."
 echo
-cp -r $SUPPORT_DIR/bpm-suite-demo-niogit ${SERVER_BIN}.niogit
+cp -r $SUPPORT_DIR/bpm-suite-demo-niogit $SERVER_BIN/.niogit
+
+echo "  - setting up standalone.xml configuration adjustments..."
+echo
+cp $SUPPORT_DIR/standalone.xml $SERVER_CONF
 
 # Add execute permissions to the standalone.sh script.
 echo "  - making sure standalone.sh for server is executable..."
 echo
 chmod u+x $JBOSS_HOME/bin/standalone.sh
 
-echo "You can now start the $PRODUCT with ${SERVER_BIN}standalone.sh"
+echo "You can now start the $PRODUCT with $SERVER_BIN/standalone.sh"
 echo
 
 echo "$PRODUCT $VERSION $DEMO Setup Complete."
