@@ -1,0 +1,20 @@
+package com.redhat.bpms.examples.mortgage;
+
+rule "Low Down Payment before Appraisal"
+	dialect "mvel"
+	ruleflow-group "apr-calculation"
+	salience -3
+	no-loop true
+	when
+		not (Appraisal( )) 
+		property : Property( )
+		application : Application( mortgageAmount > ( property.price * 8 / 10 ) )
+	then
+		double ratio = application.getMortgageAmount().doubleValue() / property.getPrice().doubleValue();
+		int brackets = (int)((ratio - 0.8) / 0.05);
+		brackets++;
+		double aprSurcharge = 0.75 * brackets;
+		System.out.println( "aprSurcharge added is " + aprSurcharge );
+		application.setApr(  application.getApr() + aprSurcharge );
+		System.out.println("Executed Rule: " + drools.getRule().getName() );
+end

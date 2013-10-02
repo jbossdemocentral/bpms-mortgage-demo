@@ -1,0 +1,13 @@
+package com.redhat.bpms.examples.mortgage;
+
+rule "Validate Property Price"
+	dialect "mvel"
+	ruleflow-group "validation"
+	when
+		Property( price < 50000 )
+	then
+		ValidationError fact0 = new ValidationError();
+		fact0.setCause( "Property price too low" );
+		insert( fact0 );
+		System.out.println("Executed Rule: " + drools.getRule().getName() );
+end

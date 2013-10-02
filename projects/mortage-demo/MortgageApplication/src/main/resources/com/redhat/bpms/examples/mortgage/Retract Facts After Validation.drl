@@ -1,0 +1,45 @@
+package com.redhat.bpms.examples.mortgage;
+
+rule "Retract Applicant after Validation"
+	dialect "mvel"
+	ruleflow-group "validation"
+	salience -10
+	when
+		fact : Applicant( )
+	then
+		retract(fact);
+		System.out.println("Executed Rule: " + drools.getRule().getName() );
+end
+
+rule "Retract Application after Validation"
+	dialect "mvel"
+	ruleflow-group "validation"
+	salience -10
+	when
+		fact : Application( )
+	then
+		retract(fact);
+		System.out.println("Executed Rule: " + drools.getRule().getName() );
+end
+
+rule "Retract Appraisal after Validation"
+	dialect "mvel"
+	ruleflow-group "validation"
+	salience -10
+	when
+		fact : Appraisal( )
+	then
+		retract(fact);
+		System.out.println("Executed Rule: " + drools.getRule().getName() );
+end
+
+rule "Retract Property after Validation"
+	dialect "mvel"
+	ruleflow-group "validation"
+	salience -10
+	when
+		fact : Property( )
+	then
+		retract(fact);
+		System.out.println("Executed Rule: " + drools.getRule().getName() );
+end

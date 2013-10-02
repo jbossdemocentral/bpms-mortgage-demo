@@ -1,0 +1,11 @@
+package com.redhat.bpms.examples.mortgage;
+
+rule "Reset Validation"
+	dialect "mvel"
+	ruleflow-group "resetValidation"
+	when
+		error : ValidationError( )
+	then
+		retract( error );
+		System.out.println("Executed Rule: " + drools.getRule().getName() );
+end

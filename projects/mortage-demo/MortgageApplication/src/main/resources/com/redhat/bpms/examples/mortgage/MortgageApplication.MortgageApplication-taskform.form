@@ -1,0 +1,56 @@
+
+<form id="2001002156">
+<property name="subject" value=""/>
+<property name="name" value="MortgageApplication.MortgageApplication-taskform.form"/>
+<property name="displayMode" value="default"/>
+<property name="status" value="0"/>
+<field position="2" name="downPayment"  id="1388830540">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;downPayment (downPayment)quot;"/>
+<property name="inputBinding" value=""/>
+<property name="outputBinding" value="downPayment"/>
+</field>
+<field position="4" name="name" type="InputText" id="1759777834">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;name (name)quot;"/>
+<property name="inputBinding" value=""/>
+<property name="outputBinding" value="name"/>
+</field>
+<field position="5" name="price"  id="62823002">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;price (price)quot;"/>
+<property name="inputBinding" value=""/>
+<property name="outputBinding" value="price"/>
+</field>
+<field position="3" name="income"  id="587561297">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;income (income)quot;"/>
+<property name="inputBinding" value=""/>
+<property name="outputBinding" value="income"/>
+</field>
+<field position="0" name="address" type="InputText" id="1458049038">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;address (address)quot;"/>
+<property name="inputBinding" value=""/>
+<property name="outputBinding" value="address"/>
+</field>
+<field position="6" name="ssn"  id="388978013">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;ssn (ssn)quot;"/>
+<property name="inputBinding" value=""/>
+<property name="outputBinding" value="ssn"/>
+</field>
+<field position="1" name="amortization"  id="1016620381">
+<property name="fieldRequired" value="false"/>
+<property name="label" value="quot;enquot;,quot;amortization (amortization)quot;"/>
+<property name="inputBinding" value=""/>
+<property name="outputBinding" value="amortization"/>
+</field>
+<dataHolder name="#B29FE4" type="basicType" outId="address" value="java.lang.String" id="address"/>
+<dataHolder name="#FBB767" type="basicType" outId="amortization" value="java.lang.Integer" id="amortization"/>
+<dataHolder name="#FF8881" type="basicType" outId="downPayment" value="java.lang.Integer" id="downPayment"/>
+<dataHolder name="#A7E690" type="basicType" outId="income" value="java.lang.Integer" id="income"/>
+<dataHolder name="#0000A0" type="basicType" outId="name" value="java.lang.String" id="name"/>
+<dataHolder name="#9BCAFA" type="basicType" outId="price" value="java.lang.Integer" id="price"/>
+<dataHolder name="#FF54A7" type="basicType" outId="ssn" value="java.lang.Integer" id="ssn"/>
+</form>

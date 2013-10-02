@@ -1,0 +1,13 @@
+package com.redhat.bpms.examples.mortgage;
+
+rule "Jumbo Mortgage"
+	dialect "mvel"
+	ruleflow-group "apr-calculation"
+	salience -5
+	no-loop true
+	when
+		application : Application( mortgageAmount > 417000 )
+	then
+		System.out.println("Executed Rule: " + drools.getRule().getName() );
+		application.setApr( application.getApr() + 0.5 );
+end

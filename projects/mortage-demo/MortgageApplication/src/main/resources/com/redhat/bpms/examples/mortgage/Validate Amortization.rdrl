@@ -1,0 +1,13 @@
+package com.redhat.bpms.examples.mortgage;
+
+rule "Validate Amortization"
+	dialect "mvel"
+	ruleflow-group "validation"
+	when
+		Application( amortization not in ( 10, 15, 30 ) )
+	then
+		ValidationError error = new ValidationError();
+		error.setCause( "Amortization can only be between 10 and 40 years" );
+		insert( error );
+		System.out.println("Executed Rule: " + drools.getRule().getName() );
+end
