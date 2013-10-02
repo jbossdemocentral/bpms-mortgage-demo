@@ -18,8 +18,8 @@ Quickstart
 5. Enjoy JBoss BPM Suite with Mortgage Demo pre-installed!
 
 
-Some notes
-----------
+Notes
+-----
 The following functionality is covered:
 
 - One advanced process.
