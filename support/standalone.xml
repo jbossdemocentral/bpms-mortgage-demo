@@ -27,7 +27,7 @@
    </extensions>
    <system-properties>
       <property name="org.kie.demo" value="false"/>
-      <property name="org.kie.nio.git.dir" value="jboss.server.bin.dir"/>
+			<property name="org.kie.nio.git.dir" value="${jboss.home.dir}/bin"/>
    </system-properties>
    <management>
       <security-realms>
