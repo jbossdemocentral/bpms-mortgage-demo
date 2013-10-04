@@ -15,11 +15,11 @@ Quickstart
 
 4. Login to http://localhost:8080/business-central  (u:erics / p:bpmsuite)
 
-  -- login for appraisor role (u:alan / p:bpmsuite)
+  - login for appraisor role (u:alan / p:bpmsuite)
 
-  -- login for broker role (u:bob / p:bpmsuite)
+  - login for broker role (u:bob / p:bpmsuite)
 
-  -- login for manager role (u:mary / p:bpmsuite)
+  - login for manager role (u:mary / p:bpmsuite)
 
 6. Enjoy JBoss BPM Suite with Mortgage Demo pre-installed!
 
