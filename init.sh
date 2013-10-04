@@ -74,12 +74,12 @@ if [ -x $JBOSS_HOME ]; then
 		echo Unpacking JBoss Enterprise EAP 6...
 		echo
 		unzip -q -d target $SRC_DIR/$EAP
-else
-		# Unzip the JBoss EAP instance.
-		echo Unpacking new JBoss Enterprise EAP 6...
-		echo
-		unzip -q -d target $SRC_DIR/$EAP
 fi
+
+# Unzip the JBoss EAP instance.
+echo Unpacking new JBoss Enterprise EAP 6...
+echo
+unzip -q -d target $SRC_DIR/$EAP
 
 # Unzip the required files from JBoss product deployable.
 echo Unpacking $PRODUCT $VERSION...
