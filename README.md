@@ -58,4 +58,6 @@ Released versions
 
 See the tagged releases for the following versions of the product:
 
+- v0.2 - JBoss BPM Suite ER4, JBoss EAP 6.0, new roles assignment, and mortage demo installed.
+
 - v0.1 - JBoss BPM Suite ER3, JBoss EAP 6.0, and mortage demo installed.
