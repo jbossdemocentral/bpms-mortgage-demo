@@ -11,7 +11,7 @@ SRC_DIR=./installs
 SUPPORT_DIR=./support
 PRJ_DIR=./projects/mortage-demo
 EAP=jboss-eap-6.1.0.zip
-BPMS=jboss-bpms-6.0.0-redhat-3-eap6.zip
+BPMS=jboss-bpms-6.0.0-redhat-4-deployable-eap6.x.zip
 VERSION=6.0.0.Beta
 
 # wipe screen.
