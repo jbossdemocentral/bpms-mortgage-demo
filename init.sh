@@ -11,7 +11,8 @@ SRC_DIR=./installs
 SUPPORT_DIR=./support
 PRJ_DIR=./projects/mortage-demo
 EAP=jboss-eap-6.1.0.zip
-BPMS=jboss-bpms-6.0.0-redhat-4-deployable-eap6.x.zip
+BPMS=jboss-bpms-6.0.0.Beta1-deployable-eap6.x.zip
+WEBSERVICE=jboss-mortgage-demo-ws.war
 VERSION=6.0.0.Beta
 
 # wipe screen.
@@ -104,10 +105,18 @@ chmod u+x $JBOSS_HOME/bin/standalone.sh
 
 echo "Deploying web service that pulls out credit report of customer based on SSN..."
 echo
-cp $SUPPORT_DIR/BigApp.war $SERVER_DIR
+cp $SUPPORT_DIR/$WEBSERVICE $SERVER_DIR
 
 echo "You can now start the $PRODUCT with $SERVER_BIN/standalone.sh"
 echo
+
+# TODO: this does not yet work... should pre-load the suite with a bunch of processes.
+#
+#echo "To load the BPM with a set of process instances, you can run the following command"
+#echo "using the jar file found in the support directory:"
+#echo 
+#echo "   java -jar jboss-mortgage-demo-client.jar erics bpmsuite http://localhost:8080/business-central com.redhat.bpms.examples:mortgage:1"
+#echo
 
 echo "$PRODUCT $VERSION $DEMO Setup Complete."
 echo
