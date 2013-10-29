@@ -21,8 +21,6 @@ Quickstart
 
   - login for manager role (u:mary / p:bpmsuite)
 
-6. Enjoy JBoss BPM Suite with Mortgage Demo pre-installed!
-
 
 Notes
 -----
@@ -47,6 +45,8 @@ The following functionality is covered:
 - Exclusive use of the BPMS Data Modeler for creating the Java fact model
 
 - Use of graphic form designer to create 4 forms with an example of javascript validation
+
+- Helper jar to pre-load with sixteen process instances in various states.
 
 
 Mortgage demo known issues for Beta1

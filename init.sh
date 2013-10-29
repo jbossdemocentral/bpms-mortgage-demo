@@ -110,13 +110,14 @@ cp $SUPPORT_DIR/$WEBSERVICE $SERVER_DIR
 echo "You can now start the $PRODUCT with $SERVER_BIN/standalone.sh"
 echo
 
-# TODO: this does not yet work... should pre-load the suite with a bunch of processes.
-#
-#echo "To load the BPM with a set of process instances, you can run the following command"
-#echo "using the jar file found in the support directory:"
-#echo 
-#echo "   java -jar jboss-mortgage-demo-client.jar erics bpmsuite http://localhost:8080/business-central com.redhat.bpms.examples:mortgage:1"
-#echo
+echo "PRE-LOAD MORTGAGE DEMO"
+ehco "======================"
+echo "To load the BPM with a set of process instances, you can run the following command"
+echo "after you start JBoss BPM Suite, build and deploy the mortgage project, then you can"
+echo "use the helper jar file found in the support directory as follows:"
+echo 
+echo "   java -jar jboss-mortgage-demo-client.jar erics bpmsuite" 
+echo
 
 echo "$PRODUCT $VERSION $DEMO Setup Complete."
 echo
