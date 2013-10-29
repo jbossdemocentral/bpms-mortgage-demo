@@ -59,6 +59,7 @@ Guided editor - Low down payment based on Appraisal rule does not display.
 
 Guided editor - Valid Down Payment rule gives pop-up error.
 
+Instance viewer - Trying to view the Process Model often turns up a blank window, no model showing progress.
 
 Released versions
 -----------------
