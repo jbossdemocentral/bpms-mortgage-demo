@@ -52,8 +52,11 @@ The following functionality is covered:
 Mortgage demo known issues for Beta1
 ------------------------------------
 Form modeler - won't display MortgageApplication.MortgageApplication-taskform.form.
+
 Guided decision table - gives pop-up error, known issue in Bugzilla.
+
 Guided editor - Low down payment based on Appraisal rule does not display.
+
 Guided editor - Valid Down Payment rule gives pop-up error.
 
 
