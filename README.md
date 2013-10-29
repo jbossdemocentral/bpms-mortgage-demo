@@ -48,9 +48,13 @@ The following functionality is covered:
 
 - Use of graphic form designer to create 4 forms with an example of javascript validation
 
-There is a deployed WAR file for a Web Service that is to be called by the process. The process can be started through the console
-using a graphical form but the WAR file also includes a servlet that uses the REST API to remotely create 16 instances of the
-process with distinct data resulting in different process states.
+
+Mortgage demo known issues for Beta1
+------------------------------------
+Form modeler - won't display MortgageApplication.MortgageApplication-taskform.form.
+Guided decision table - gives pop-up error, known issue in Bugzilla.
+Guided editor - Low down payment based on Appraisal rule does not display.
+Guided editor - Valid Down Payment rule gives pop-up error.
 
 
 Released versions
