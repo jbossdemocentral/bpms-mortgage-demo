@@ -48,6 +48,8 @@ The following functionality is covered:
 
 - Helper jar to pre-load with sixteen process instances in various states.
 
+Note that the entire demo is running default in memory, restart server, lose your process instances, data, monitoring history.
+
 
 Mortgage demo known issues for Beta1
 ------------------------------------
@@ -60,6 +62,7 @@ Guided editor - Low down payment based on Appraisal rule does not display.
 Guided editor - Valid Down Payment rule gives pop-up error.
 
 Instance viewer - Trying to view the Process Model often turns up a blank window, no model showing progress.
+
 
 Released versions
 -----------------
