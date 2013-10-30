@@ -111,7 +111,7 @@ echo "You can now start the $PRODUCT with $SERVER_BIN/standalone.sh"
 echo
 
 echo "PRE-LOAD MORTGAGE DEMO"
-ehco "======================"
+echo "======================"
 echo "To load the BPM with a set of process instances, you can run the following command"
 echo "after you start JBoss BPM Suite, build and deploy the mortgage project, then you can"
 echo "use the helper jar file found in the support directory as follows:"
