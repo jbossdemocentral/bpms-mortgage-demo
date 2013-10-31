@@ -11,7 +11,7 @@ Quickstart
 
 2. Add products to installs directory.
 
-3. Run 'init.sh'
+3. Run 'init.sh' or 'init.bat' file.
 
 4. Login to http://localhost:8080/business-central  (u:erics / p:bpmsuite)
 
