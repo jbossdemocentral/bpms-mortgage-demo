@@ -28,6 +28,8 @@
    <system-properties>
       <property name="org.kie.demo" value="false"/>
 			<property name="org.kie.nio.git.dir" value="${jboss.home.dir}/bin"/>
+			<property name="org.uberfire.metadata.index.dir" value="${jboss.home.dir}/bin"/>
+			<property name="org.guvnor.m2repo.dir" value="${jboss.home.dir}/bin"/>
    </system-properties>
    <management>
       <security-realms>
