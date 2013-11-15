@@ -67,6 +67,14 @@ Guided editor - Valid Down Payment rule gives pop-up error.
 Instance viewer - Trying to view the Process Model often turns up a blank window, no model showing progress.
 
 
+Supporting Articles
+-------------------
+
+[Red Hat JBoss BPM Suite - installing the Mortgage demo project (video)] (http://www.schabell.org/2013/10/jboss-bpm-suite-install-mortage-demo-video.html)
+
+[Red Hat JBoss BPM Suite - get rocking with the all new Mortgage Demo] (http://www.schabell.org/2013/10/jboss-bpm-suite-rocking-the-mortgage-demo.html)
+
+
 Released versions
 -----------------
 
