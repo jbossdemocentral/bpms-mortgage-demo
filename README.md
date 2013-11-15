@@ -1,7 +1,10 @@
 JBoss BPM Suite Mortgage Demo 
 =============================
 
-Demo based on JBoss BPM Suite product.
+
+![Install Console](https://github.com/eschabell/bpms-mortgage-demo/blob/master/docs/demo-images/install-console.png?raw=true)
+
+![Mortgage Process](https://github.com/eschabell/bpms-mortgage-demo/blob/master/docs/demo-images/mortgage-process.png?raw=true)
 
 
 Quickstart
