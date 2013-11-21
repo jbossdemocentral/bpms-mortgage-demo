@@ -27,6 +27,8 @@
    </extensions>
    <system-properties>
       <property name="org.kie.demo" value="false"/>
+      <property name="org.kie.example" value="false"/>
+      <property name="org.jbpm.designer.perspective" value="full"/>
 			<property name="org.kie.nio.git.dir" value="${jboss.home.dir}/bin"/>
 			<property name="org.uberfire.metadata.index.dir" value="${jboss.home.dir}/bin"/>
 			<property name="org.guvnor.m2repo.dir" value="${jboss.home.dir}/bin"/>
@@ -269,6 +271,7 @@
          <virtual-server name="default-host" enable-welcome-root="true">
             <alias name="localhost"/>
             <alias name="example.com"/>
+            <sso/>
          </virtual-server>
       </subsystem>
       <subsystem xmlns="urn:jboss:domain:webservices:1.2">
