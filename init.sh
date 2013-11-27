@@ -10,10 +10,10 @@ SERVER_BIN=$JBOSS_HOME/bin
 SRC_DIR=./installs
 SUPPORT_DIR=./support
 PRJ_DIR=./projects/mortage-demo
-EAP=jboss-eap-6.1.0.zip
-BPMS=jboss-bpms-6.0.0.Beta1-deployable-eap6.x.zip
+EAP=jboss-eap-6.1.1.zip
+BPMS=jboss-bpms-6.0.0-redhat-5-deployable-eap6.x.zip
 WEBSERVICE=jboss-mortgage-demo-ws.war
-VERSION=6.0.0.Beta
+VERSION=6.0.0.ER5
 
 # wipe screen.
 clear 
