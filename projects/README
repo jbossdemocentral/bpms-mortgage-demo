@@ -1,2 +1,6 @@
 Directory to hold project.
 
+Can be cloned from the running product.
+
+$ git clone git://localhost/MortageApplication
+
