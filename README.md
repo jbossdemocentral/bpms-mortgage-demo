@@ -56,23 +56,9 @@ Note that the entire demo is running default in memory, restart server, lose you
 
 Mortgage demo known issues 
 --------------------------
-ER5:
+- client jar is currently defective, will not populate the instances.
 
-- unable to login without errors, build and deploy fails.
-
-
-Beta1:
-
-Form modeler - won't display MortgageApplication.MortgageApplication-taskform.form.
-
-Guided decision table - gives pop-up error, known issue in Bugzilla.
-
-Guided editor - Low down payment based on Appraisal rule does not display.
-
-Guided editor - Valid Down Payment rule gives pop-up error.
-
-Instance viewer - Trying to view the Process Model often turns up a blank window, no model showing progress.
-
+- some issues with workitems, being looked at. 
 
 Supporting Articles
 -------------------
