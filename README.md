@@ -54,8 +54,15 @@ The following functionality is covered:
 Note that the entire demo is running default in memory, restart server, lose your process instances, data, monitoring history.
 
 
-Mortgage demo known issues for Beta1
-------------------------------------
+Mortgage demo known issues 
+--------------------------
+ER5:
+
+- unable to login without errors, build and deploy fails.
+
+
+Beta1:
+
 Form modeler - won't display MortgageApplication.MortgageApplication-taskform.form.
 
 Guided decision table - gives pop-up error, known issue in Bugzilla.
