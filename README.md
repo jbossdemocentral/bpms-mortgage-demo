@@ -58,7 +58,14 @@ Mortgage demo known issues
 --------------------------
 - client jar is currently defective, will not populate the instances.
 
-- some issues with workitems, being looked at. 
+- issues with work items, here is a workaround for ER5:
+
+    - go to bpms-6.0.0.ER5/jboss-eap-6.1/standalone/deployments/business-central.war/WEB-INF/classes/META-INF and move the following two files to your home directory:
+
+        - drools.session.conf
+
+        - CustomWorkItemHandlers.conf
+
 
 Supporting Articles
 -------------------
