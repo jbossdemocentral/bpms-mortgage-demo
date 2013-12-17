@@ -60,6 +60,15 @@ Mortgage demo known issues
 
 - login gives errors but UI continues to work.
 
+- issues with work items, here is a workaround:
+
+    - go to target/jboss-eap-6.1/standalone/deployments/business-central.war/WEB-INF/classes/META-INF and move the
+		  following two files to your home directory:
+
+         - drools.session.conf
+ 
+         - CustomWorkItemHandlers.conf
+
 
 
 Supporting Articles
