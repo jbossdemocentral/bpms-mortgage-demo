@@ -14,9 +14,9 @@ set SRC_DIR=%PROJECT_HOME%\installs
 set SUPPORT_DIR=%PROJECT_HOME%\support
 set PRJ_DIR=%PROJECT_HOME%\projects\mortage-demo
 set EAP=jboss-eap-6.1.1.zip
-set BPMS=jboss-bpms-6.0.0-redhat-5-deployable-eap6.x.zip
+set BPMS=jboss-bpms-6.0.0.Beta-redhat-5-deployable-eap6.x.zip
 set WEBSERVICE=jboss-mortgage-demo-ws.war
-set VERSION=6.0.0.ER5
+set VERSION=6.0.0.Beta
 
 REM wipe screen.
 cls

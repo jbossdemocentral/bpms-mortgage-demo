@@ -58,13 +58,8 @@ Mortgage demo known issues
 --------------------------
 - client jar is currently defective, will not populate the instances.
 
-- issues with work items, here is a workaround for ER5:
+- login gives errors but UI continues to work.
 
-    - go to bpms-6.0.0.ER5/jboss-eap-6.1/standalone/deployments/business-central.war/WEB-INF/classes/META-INF and move the following two files to your home directory:
-
-        - drools.session.conf
-
-        - CustomWorkItemHandlers.conf
 
 
 Supporting Articles
@@ -80,7 +75,7 @@ Released versions
 
 See the tagged releases for the following versions of the product:
 
-- v0.4 - JBoss BPM Suite 6.0.0.ER5, JBoss EAP 6.0, and mortgage demo installed.
+- v0.4 - JBoss BPM Suite 6.0.0.Beta, JBoss EAP 6.1.1, and mortgage demo installed.
 
 - v0.3 - JBoss BPM Suite 6.0.0.Beta1, JBoss EAP 6.0, and mortgage demo installed.
 

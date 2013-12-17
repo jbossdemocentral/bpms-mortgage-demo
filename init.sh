@@ -11,9 +11,9 @@ SRC_DIR=./installs
 SUPPORT_DIR=./support
 PRJ_DIR=./projects/mortage-demo
 EAP=jboss-eap-6.1.1.zip
-BPMS=jboss-bpms-6.0.0-redhat-5-deployable-eap6.x.zip
+BPMS=jboss-bpms-6.0.0.Beta-redhat-5-deployable-eap6.x.zip
 WEBSERVICE=jboss-mortgage-demo-ws.war
-VERSION=6.0.0.ER5
+VERSION=6.0.0.Beta
 
 # wipe screen.
 clear 
