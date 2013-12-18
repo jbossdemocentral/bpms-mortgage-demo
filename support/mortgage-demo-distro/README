@@ -1,0 +1,16 @@
+Instruction:
+1. unzip jboss-bpm-example-dist-${version}.zip
+2. Go to 'Business Console' eg: http://localhost:8080/business-central (Assuming the BPM Server is started)
+3. Click 'Authoring' > 'Administration'->
+4. Click 'Clone repository'.  Enter the following parameters in the dialog box:
+             Repository Name: 'Mortgages'
+             Group: 'Demo' (Asuming you have this group created)
+             Git URL: 'file://${CURRENTPATH}/mortgage-demo/.git'
+             User name: '<EMPTY'
+             Password: '<EMPTY>'
+This will clone the repo. Now you can see Mortgage repository in File Explorer.
+5. Click 'Authoring" > "Project Authoring", Select "Mortgage" in the Repository and Click "Build&Deploy" in right panel. 
+6. Copy jboss-mortgage-demo-ws.war to ${BPM Server Dir}/standalone/deployments/
+7. java -jar jboss-mortgage-demo-client.jar USERNAME PASSWORD [http://localhost:8080/business-central] [com.redhat.bpms.examples:mortgage:1]
+eg: java -jar jboss-mortgage-demo-client.jar admin your_password
+If there is no error, then you can see instances have been created in the console.

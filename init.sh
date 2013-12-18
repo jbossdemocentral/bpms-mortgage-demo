@@ -90,10 +90,6 @@ echo "  - enabling demo accounts role setup in application-roles.properties file
 echo
 cp $SUPPORT_DIR/application-roles.properties $SERVER_CONF
 
-echo "  - setting up demo projects..."
-echo
-cp -r $SUPPORT_DIR/bpm-suite-demo-niogit $SERVER_BIN/.niogit
-
 echo "  - setting up standalone.xml configuration adjustments..."
 echo
 cp $SUPPORT_DIR/standalone.xml $SERVER_CONF
@@ -103,9 +99,13 @@ echo "  - making sure standalone.sh for server is executable..."
 echo
 chmod u+x $JBOSS_HOME/bin/standalone.sh
 
-echo "Deploying web service that pulls out credit report of customer based on SSN..."
-echo
-cp $SUPPORT_DIR/$WEBSERVICE $SERVER_DIR
+#echo "  - setting up demo projects..."
+#echo
+#cp -r $SUPPORT_DIR/bpm-suite-demo-niogit $SERVER_BIN/.niogit
+
+#echo "Deploying web service that pulls out credit report of customer based on SSN..."
+#echo
+#cp $SUPPORT_DIR/$WEBSERVICE $SERVER_DIR
 
 echo "You can now start the $PRODUCT with $SERVER_BIN/standalone.sh"
 echo

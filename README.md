@@ -56,6 +56,9 @@ Note that the entire demo is running default in memory, restart server, lose you
 
 Mortgage demo known issues 
 --------------------------
+
+Project is broken for Beta right now. Init.sh disabled to not install demo project nor demo project web service.
+
 - client jar is currently defective, will not populate the instances.
 
 - login gives errors but UI continues to work.
