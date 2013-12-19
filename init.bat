@@ -112,6 +112,11 @@ mkdir "%SERVER_BIN%\.niogit\"
 xcopy /Y /Q /S "%SUPPORT_DIR%\bpm-suite-demo-niogit\*" "%SERVER_BIN%\.niogit\"
 echo. 
 
+echo - setting up mock bpm dashboard data...
+echo.
+xcopy /Y /Q "%SUPPORT_DIR%\1000_jbpm_demo_h2.sql" "%SERVER_DIR%\dashbuilder.war\WEB-INF\etc\sql"
+echo. 
+
 echo - setting up standalone.xml configuration adjustments...
 echo.
 xcopy /Y /Q "%SUPPORT_DIR%\standalone.xml" "%SERVER_CONF%"

@@ -107,6 +107,10 @@ chmod u+x $JBOSS_HOME/bin/standalone.sh
 #echo
 #cp $SUPPORT_DIR/$WEBSERVICE $SERVER_DIR
 
+echo "  - setting up mock bpm dashboard data..."
+echo
+cp $SUPPORT_DIR/1000_jbpm_demo_h2.sql $SERVER_DIR/dashbuilder.war/WEB-INF/etc/sql
+
 echo "You can now start the $PRODUCT with $SERVER_BIN/standalone.sh"
 echo
 
