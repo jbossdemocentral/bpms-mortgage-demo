@@ -56,7 +56,16 @@ Note that the entire demo is running default in memory, restart server, lose you
 Mortgage demo known issues 
 --------------------------
 
-None, demo setup fixes all bugs and problems.
+- client jar execution fails before completion with:
+
+$ java -jar mortgage-demo-client-1.0.0.jar erics bpmsuite
+Exception in thread "main" java.lang.RuntimeException: RuntimeException thrown with message 'Unable to commit transaction' Caused
+by: RollbackException thrown with message 'ARJUNA016053: Could not commit transaction.'
+	at org.kie.services.client.api.command.AbstractRemoteCommandObject.executeRestCommand(AbstractRemoteCommandObject.java:318)
+	at org.kie.services.client.api.command.AbstractRemoteCommandObject.execute(AbstractRemoteCommandObject.java:132)
+	at org.drools.core.command.impl.CommandBasedStatefulKnowledgeSession.startProcess(CommandBasedStatefulKnowledgeSession.java:232)
+	at com.redhat.bpms.examples.mortgage.CreateProcesses.populateSamples(CreateProcesses.java:84)
+	at com.redhat.bpms.examples.mortgage.CreateProcesses.main(CreateProcesses.java:47)
 
 
 Supporting Articles
