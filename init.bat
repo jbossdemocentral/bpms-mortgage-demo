@@ -12,11 +12,11 @@ set SERVER_CONF=%JBOSS_HOME%\standalone\configuration\
 set SERVER_BIN=%JBOSS_HOME%\bin
 set SRC_DIR=%PROJECT_HOME%\installs
 set SUPPORT_DIR=%PROJECT_HOME%\support
-set PRJ_DIR=%PROJECT_HOME%\projects\mortage-demo
+set PRJ_DIR=%PROJECT_HOME%\projects\mortgage-demo
 set EAP=jboss-eap-6.1.1.zip
-set BPMS=jboss-bpms-6.0.0.Beta-redhat-5-deployable-eap6.x.zip
+set BPMS=jboss-bpms-6.0.0.GA-redhat-1-deployable-eap6.x.zip
 set WEBSERVICE=jboss-mortgage-demo-ws.war
-set VERSION=6.0.0.Beta
+set VERSION=6.0.0.CR1
 
 REM wipe screen.
 cls
@@ -110,12 +110,18 @@ echo.
 
 mkdir "%SERVER_BIN%\.niogit\"
 xcopy /Y /Q /S "%SUPPORT_DIR%\bpm-suite-demo-niogit\*" "%SERVER_BIN%\.niogit\"
+xcopy /Y /Q /S "%SUPPORT_DIR%\bpm-suite-demo-index\*" "%SERVER_BIN%\.index\"
 echo. 
 
 echo - setting up mock bpm dashboard data...
 echo.
 xcopy /Y /Q "%SUPPORT_DIR%\1000_jbpm_demo_h2.sql" "%SERVER_DIR%\dashbuilder.war\WEB-INF\etc\sql"
 echo. 
+
+echo - turn off security profile for performance in standalone.conf... 
+echo.
+xcopy /Y /Q "%SUPPORT_DIR%\standalone.conf" "%SERVER_BIN%\standalone.conf"
+echo.
 
 echo - setting up standalone.xml configuration adjustments...
 echo.
@@ -126,6 +132,11 @@ echo Deploying web service that pulls out credit report of customer based on SSN
 echo.
 xcopy /Y /Q "%SUPPORT_DIR%\%WEBSERVICE%" "%SERVER_DIR%"
 echo. 
+
+echo - temp CR1 fix for persisitence bug: https://bugzilla.redhat.com/show_bug.cgi?id=1055122
+echo.
+xcopy /Y /Q "%SUPPORT_DIR%\persistence.xml" "%SERVER_DIR%\business-central.war\WEB-INF\classes\META-INF\persistence.xml"
+echo.
 
 echo.
 echo You can now start the %PRODUCT% with %SERVER_BIN%\standalone.bat

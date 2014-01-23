@@ -9,11 +9,11 @@ SERVER_CONF=$JBOSS_HOME/standalone/configuration/
 SERVER_BIN=$JBOSS_HOME/bin
 SRC_DIR=./installs
 SUPPORT_DIR=./support
-PRJ_DIR=./projects/mortage-demo
+PRJ_DIR=./projects/mortgage-demo
 EAP=jboss-eap-6.1.1.zip
-BPMS=jboss-bpms-6.0.0.Beta-redhat-5-deployable-eap6.x.zip
+BPMS=jboss-bpms-6.0.0.GA-redhat-1-deployable-eap6.x.zip
 WEBSERVICE=jboss-mortgage-demo-ws.war
-VERSION=6.0.0.Beta
+VERSION=6.0.0.CR1
 
 # wipe screen.
 clear 
@@ -94,18 +94,26 @@ echo "  - setting up standalone.xml configuration adjustments..."
 echo
 cp $SUPPORT_DIR/standalone.xml $SERVER_CONF
 
-# Add execute permissions to the standalone.sh script.
 echo "  - making sure standalone.sh for server is executable..."
 echo
 chmod u+x $JBOSS_HOME/bin/standalone.sh
 
-#echo "  - setting up demo projects..."
-#echo
-#cp -r $SUPPORT_DIR/bpm-suite-demo-niogit $SERVER_BIN/.niogit
+echo "  - turn off security profile for performance in standalone.conf..."
+echo
+sed -i '' 's/JAVA_OPTS="$JAVA_OPTS -Djava.security.manager/#JAVA_OPTS="$JAVA_OPTS -Djava.security.manager/g' $JBOSS_HOME/bin/standalone.conf
 
-#echo "Deploying web service that pulls out credit report of customer based on SSN..."
-#echo
-#cp $SUPPORT_DIR/$WEBSERVICE $SERVER_DIR
+echo "  - temp CR1 fix for persisitence bug: https://bugzilla.redhat.com/show_bug.cgi?id=1055122 ..."
+echo
+cp -r $SUPPORT_DIR/persistence.xml $SERVER_DIR/business-central.war/WEB-INF/classes/META-INF/persistence.xml
+
+echo "  - setting up demo projects..."
+echo
+cp -r $SUPPORT_DIR/bpm-suite-demo-niogit $SERVER_BIN/.niogit
+cp -r $SUPPORT_DIR/bpm-suite-demo-index $SERVER_BIN/.index
+
+echo "Deploying web service that pulls out credit report of customer based on SSN..."
+echo
+cp $SUPPORT_DIR/$WEBSERVICE $SERVER_DIR
 
 echo "  - setting up mock bpm dashboard data..."
 echo
