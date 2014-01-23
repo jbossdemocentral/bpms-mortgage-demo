@@ -56,22 +56,7 @@ Note that the entire demo is running default in memory, restart server, lose you
 Mortgage demo known issues 
 --------------------------
 
-Project is broken for Beta right now. Init.sh disabled to not install demo project nor demo project web service.
-
-- client jar is currently defective, will not populate the instances.
-
-- login gives errors but UI continues to work.
-
-- web service call fails in process, workaround below is not working for me.
-
-- issues with work items, here is a workaround:
-
-    - go to target/jboss-eap-6.1/standalone/deployments/business-central.war/WEB-INF/classes/META-INF and move the
-		  following two files to your home directory:
-
-         - drools.session.conf
- 
-         - CustomWorkItemHandlers.conf
+None, demo setup fixes all bugs and problems.
 
 
 Supporting Articles
@@ -86,6 +71,8 @@ Released versions
 -----------------
 
 See the tagged releases for the following versions of the product:
+
+- v0.5 - JBoss BPM Suite 6.0.0.CR1, JBoss EAP 6.1.1, and mortgage demo installed.
 
 - v0.4 - JBoss BPM Suite 6.0.0.Beta, JBoss EAP 6.1.1, mock data populated in Process and Task dashboard, and mortgage demo installed.
 
