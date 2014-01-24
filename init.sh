@@ -11,9 +11,9 @@ SRC_DIR=./installs
 SUPPORT_DIR=./support
 PRJ_DIR=./projects/mortgage-demo
 EAP=jboss-eap-6.1.1.zip
-BPMS=jboss-bpms-6.0.0.GA-redhat-1-deployable-eap6.x.zip
+BPMS=jboss-bpms-6.0.0.GA-redhat-2-deployable-eap6.x.zip
 WEBSERVICE=jboss-mortgage-demo-ws.war
-VERSION=6.0.0.CR1
+VERSION=6.0.0.CR2
 
 # wipe screen.
 clear 
@@ -97,10 +97,6 @@ cp $SUPPORT_DIR/standalone.xml $SERVER_CONF
 echo "  - making sure standalone.sh for server is executable..."
 echo
 chmod u+x $JBOSS_HOME/bin/standalone.sh
-
-echo "  - turn off security profile for performance in standalone.conf..."
-echo
-sed -i '' 's/JAVA_OPTS="$JAVA_OPTS -Djava.security.manager/#JAVA_OPTS="$JAVA_OPTS -Djava.security.manager/g' $JBOSS_HOME/bin/standalone.conf
 
 echo "  - temp CR1 fix for persisitence bug: https://bugzilla.redhat.com/show_bug.cgi?id=1055122 ..."
 echo

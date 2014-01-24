@@ -14,9 +14,9 @@ set SRC_DIR=%PROJECT_HOME%\installs
 set SUPPORT_DIR=%PROJECT_HOME%\support
 set PRJ_DIR=%PROJECT_HOME%\projects\mortgage-demo
 set EAP=jboss-eap-6.1.1.zip
-set BPMS=jboss-bpms-6.0.0.GA-redhat-1-deployable-eap6.x.zip
+set BPMS=jboss-bpms-6.0.0.GA-redhat-2-deployable-eap6.x.zip
 set WEBSERVICE=jboss-mortgage-demo-ws.war
-set VERSION=6.0.0.CR1
+set VERSION=6.0.0.CR2
 
 REM wipe screen.
 cls
@@ -121,11 +121,6 @@ REM echo - setting up mock bpm dashboard data...
 REM echo.
 REM xcopy /Y /Q "%SUPPORT_DIR%\1000_jbpm_demo_h2.sql" "%SERVER_DIR%\dashbuilder.war\WEB-INF\etc\sql"
 REM echo. 
-
-echo - turn off security profile for performance in standalone.conf... 
-echo.
-xcopy /Y /Q "%SUPPORT_DIR%\standalone.conf" "%SERVER_BIN%\standalone.conf"
-echo.
 
 echo - setting up standalone.xml configuration adjustments...
 echo.
