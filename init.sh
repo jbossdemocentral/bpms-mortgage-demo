@@ -115,9 +115,13 @@ echo "Deploying web service that pulls out credit report of customer based on SS
 echo
 cp $SUPPORT_DIR/$WEBSERVICE $SERVER_DIR
 
-echo "  - setting up mock bpm dashboard data..."
-echo
-cp $SUPPORT_DIR/1000_jbpm_demo_h2.sql $SERVER_DIR/dashbuilder.war/WEB-INF/etc/sql
+# Optional: uncomment this to install mock data for BPM Suite, providing 
+#           colorful BAM history charts and filled Process & Task dashboard 
+#           views.
+#
+#echo "  - setting up mock bpm dashboard data..."
+#echo
+#cp $SUPPORT_DIR/1000_jbpm_demo_h2.sql $SERVER_DIR/dashbuilder.war/WEB-INF/etc/sql
 
 echo "You can now start the $PRODUCT with $SERVER_BIN/standalone.sh"
 echo

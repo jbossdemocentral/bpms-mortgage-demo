@@ -113,10 +113,14 @@ xcopy /Y /Q /S "%SUPPORT_DIR%\bpm-suite-demo-niogit\*" "%SERVER_BIN%\.niogit\"
 xcopy /Y /Q /S "%SUPPORT_DIR%\bpm-suite-demo-index\*" "%SERVER_BIN%\.index\"
 echo. 
 
-echo - setting up mock bpm dashboard data...
-echo.
-xcopy /Y /Q "%SUPPORT_DIR%\1000_jbpm_demo_h2.sql" "%SERVER_DIR%\dashbuilder.war\WEB-INF\etc\sql"
-echo. 
+REM Optional: uncomment this to install mock data for BPM Suite, providing 
+REM           colorful BAM history charts and filled Process & Task dashboard 
+REM           views.
+REM
+REM echo - setting up mock bpm dashboard data...
+REM echo.
+REM xcopy /Y /Q "%SUPPORT_DIR%\1000_jbpm_demo_h2.sql" "%SERVER_DIR%\dashbuilder.war\WEB-INF\etc\sql"
+REM echo. 
 
 echo - turn off security profile for performance in standalone.conf... 
 echo.
