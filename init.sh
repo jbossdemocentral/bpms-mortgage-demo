@@ -98,7 +98,7 @@ echo "  - making sure standalone.sh for server is executable..."
 echo
 chmod u+x $JBOSS_HOME/bin/standalone.sh
 
-echo "  - temp CR1 fix for persisitence bug: https://bugzilla.redhat.com/show_bug.cgi?id=1055122 ..."
+echo "  - fix for persisitence bug: https://bugzilla.redhat.com/show_bug.cgi?id=1055122 ..."
 echo
 cp -r $SUPPORT_DIR/persistence.xml $SERVER_DIR/business-central.war/WEB-INF/classes/META-INF/persistence.xml
 
