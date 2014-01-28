@@ -100,7 +100,7 @@ chmod u+x $JBOSS_HOME/bin/standalone.sh
 
 echo "  - turn off security profile for performance in standalone.conf..."
 echo
-sed -i '' 's/JAVA_OPTS="$JAVA_OPTS -Djava.security.manager/#JAVA_OPTS="$JAVA_OPTS -Djava.security.manager/g' $JBOSS_HOME/bin/standalone.conf
+sed -i 's/JAVA_OPTS="$JAVA_OPTS -Djava.security.manager/#JAVA_OPTS="$JAVA_OPTS -Djava.security.manager/g' $JBOSS_HOME/bin/standalone.conf
 
 echo "  - temp CR1 fix for persisitence bug: https://bugzilla.redhat.com/show_bug.cgi?id=1055122 ..."
 echo
@@ -133,4 +133,3 @@ echo
 
 echo "$PRODUCT $VERSION $DEMO Setup Complete."
 echo
-
