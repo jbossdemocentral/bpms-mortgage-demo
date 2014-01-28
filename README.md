@@ -29,7 +29,7 @@ Quickstart
 rejected path, some will be waiting for you in the various human task when you login. To inject these pre-configured
 requests just run the client jar from a command line shell. You can run the following command from the 'support' directory:
 
-> java -jar jboss-mortgage-demo-client.jar erics bpmsuite
+	`java -jar jboss-mortgage-demo-client.jar erics bpmsuite`
 
 Notes
 -----
