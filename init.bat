@@ -16,7 +16,7 @@ set PRJ_DIR=%PROJECT_HOME%\projects\mortgage-demo
 set EAP=jboss-eap-6.1.1.zip
 set BPMS=jboss-bpms-6.0.0.GA-redhat-2-deployable-eap6.x.zip
 set WEBSERVICE=jboss-mortgage-demo-ws.war
-set VERSION=6.0.0.CR2
+set VERSION=6.0.0.GA
 
 REM wipe screen.
 cls
@@ -131,11 +131,6 @@ echo Deploying web service that pulls out credit report of customer based on SSN
 echo.
 xcopy /Y /Q "%SUPPORT_DIR%\%WEBSERVICE%" "%SERVER_DIR%"
 echo. 
-
-echo - temp CR1 fix for persisitence bug: https://bugzilla.redhat.com/show_bug.cgi?id=1055122
-echo.
-xcopy /Y /Q "%SUPPORT_DIR%\persistence.xml" "%SERVER_DIR%\business-central.war\WEB-INF\classes\META-INF\persistence.xml"
-echo.
 
 echo.
 echo You can now start the %PRODUCT% with %SERVER_BIN%\standalone.bat
