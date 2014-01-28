@@ -13,13 +13,17 @@ Quickstart
 
 4. Start JBoss BPMS Server by running 'standalone.sh' or 'standalone.bat' in the <path-to-project>/target/jboss-eap-6.1/bin directory.
 
-5. Login to http://localhost:8080/business-central  (u:erics / p:bpmsuite)
+5. Login to http://localhost:8080/business-central  
+
+```
+  - login for admin role (u:erics / p:bpmsuite)
 
   - login for appraisor role (u:alan / p:bpmsuite)
 
   - login for broker role (u:bob / p:bpmsuite)
 
   - login for manager role (u:mary / p:bpmsuite)
+```
 
 6. Mortgage Loan demo pre-installed as project.
 
