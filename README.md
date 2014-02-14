@@ -27,7 +27,7 @@ Quickstart
 
 6. Mortgage Loan demo pre-installed as project.
 
-7. Process and Task dashboard pre-filled with mock data optional now. For Windows intaller, to add just uncomment install scripts (see inline script comments). 
+7. Process and Task dashboard pre-filled with mock data optional now. 
 
 8. You can pre-load the BPM Suite Mortgage project with multiple pre-configured process instances, some will run through the
 rejected path, some will be waiting for you in the various human task when you login. To inject these pre-configured
@@ -84,6 +84,8 @@ Released versions
 -----------------
 
 See the tagged releases for the following versions of the product:
+
+- v1.1 - JBoss BPM Suite 6.0.0.GA, JBoss EAP 6.1.1, and mortgage demo installed, mock data question removed.
 
 - v1.0 - JBoss BPM Suite 6.0.0.GA, JBoss EAP 6.1.1, and mortgage demo installed.
 
