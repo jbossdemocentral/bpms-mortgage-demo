@@ -7,3 +7,5 @@ $ git clone git://localhost/MortgageApplication
 This is READ_ONLY, if you want to push back changes:
 
 $ git clone ssh://erics@localhost:8001/MOrtgageApplication
+
+It will ask for passwords on push, use 'bpmsuite'.
