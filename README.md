@@ -66,12 +66,6 @@ The following functionality is covered:
 Note that the entire demo is running default in memory, restart server, lose your process instances, data, monitoring history.
 
 
-Mortgage demo known issues 
---------------------------
-
-No known issues.
-
-
 Supporting Articles
 -------------------
 
