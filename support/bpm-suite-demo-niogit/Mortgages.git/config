@@ -1,0 +1,12 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+	logallrefupdates = false
+	precomposeunicode = true
+[remote "origin"]
+	url = file:///Users/erics/Downloads/bpms/6.0.1.GA/mortgage-demo/.git
+	fetch = +refs/heads/*:refs/heads//*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
