@@ -79,11 +79,13 @@ Released versions
 
 See the tagged releases for the following versions of the product:
 
-- v1.2 - JBoss BPM Suite 6.0.1.GA, JBoss EAP 6.1.1, and mortgage demo installed.
+- v1.3 - JBoss BPM Suite 6.0.2, JBoss EAP 6.1.1, and mortgage demo installed.
 
-- v1.1 - JBoss BPM Suite 6.0.0.GA, JBoss EAP 6.1.1, and mortgage demo installed, mock data question removed.
+- v1.2 - JBoss BPM Suite 6.0.1, JBoss EAP 6.1.1, and mortgage demo installed.
 
-- v1.0 - JBoss BPM Suite 6.0.0.GA, JBoss EAP 6.1.1, and mortgage demo installed.
+- v1.1 - JBoss BPM Suite 6.0.0, JBoss EAP 6.1.1, and mortgage demo installed, mock data question removed.
+
+- v1.0 - JBoss BPM Suite 6.0.0, JBoss EAP 6.1.1, and mortgage demo installed.
 
 - v0.7 - JBoss BPM Suite 6.0.0.CR2, JBoss EAP 6.1.1, and mortgage demo installed.
 
