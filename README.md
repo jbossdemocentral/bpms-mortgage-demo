@@ -102,8 +102,6 @@ See the tagged releases for the following versions of the product:
 - v0.1 - JBoss BPM Suite ER3, JBoss EAP 6.0, and mortgage demo installed.
 
 
-![Install Console](https://github.com/eschabell/bpms-mortgage-demo/blob/master/docs/demo-images/install-console.png?raw=true)
-
 ![Mortgage Process](https://github.com/eschabell/bpms-mortgage-demo/blob/master/docs/demo-images/mortgage-process.png?raw=true)
 
 ![Process and Task Dashboard](https://github.com/eschabell/bpms-mortgage-demo/blob/master/docs/demo-images/mock-bpm-data.png?raw=true)
