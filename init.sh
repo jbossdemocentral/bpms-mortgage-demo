@@ -10,8 +10,7 @@ SERVER_BIN=$JBOSS_HOME/bin
 SRC_DIR=./installs
 SUPPORT_DIR=./support
 PRJ_DIR=./projects/mortgage-demo
-EAP=jboss-eap-6.1.1.zip
-BPMS=jboss-bpms-6.0.2.GA-redhat-5-deployable-eap6.x.zip
+BPMS=jboss-bpms-installer-6.0.2.GA-redhat-5.jar
 WEBSERVICE=jboss-mortgage-demo-ws.war
 VERSION=6.0.2.GA
 
@@ -42,53 +41,42 @@ echo
 command -v mvn -q >/dev/null 2>&1 || { echo >&2 "Maven is required but not installed yet... aborting."; exit 1; }
 
 # make some checks first before proceeding.	
-if [ -r $SRC_DIR/$EAP ] || [ -L $SRC_DIR/$EAP ]; then
-		echo EAP sources are present...
-		echo
+if [[ -r $SRC_DIR/$BPMS || -L $SRC_DIR/$BPMS ]]; then
+	echo Product sources are present...
+	echo
 else
-		echo Need to download $EAP package from the Customer Portal 
-		echo and place it in the $SRC_DIR directory to proceed...
-		echo
-		exit
-fi
-
-# Create the target directory if it does not already exist.
-if [ ! -x target ]; then
-		echo "  - creating the target directory..."
-		echo
-		mkdir target
-else
-		echo "  - detected target directory, moving on..."
-		echo
+	echo Need to download $BPMS package from the Customer Portal 
+	echo and place it in the $SRC_DIR directory to proceed...
+	echo
+	exit
 fi
 
 # Move the old JBoss instance, if it exists, to the OLD position.
 if [ -x $JBOSS_HOME ]; then
-		echo "  - existing JBoss Enterprise EAP 6 detected..."
-		echo
-		echo "  - moving existing JBoss Enterprise EAP 6 aside..."
-		echo
-		rm -rf $JBOSS_HOME.OLD
-		mv $JBOSS_HOME $JBOSS_HOME.OLD
+	echo "  - existing JBoss product install detected..."
+	echo
+	echo "  - moving existing JBoss install moved aside..."
+	echo
+	rm -rf $JBOSS_HOME.OLD
+	mv $JBOSS_HOME $JBOSS_HOME.OLD
 fi
 
-# Unzip the JBoss EAP instance.
-echo Unpacking new JBoss Enterprise EAP 6...
+# Run installer.
+echo Product installer running now...
 echo
-unzip -q -d target $SRC_DIR/$EAP
-
-# Unzip the required files from JBoss product deployable.
-echo Unpacking $PRODUCT $VERSION...
-echo
-unzip -q -o -d target $SRC_DIR/$BPMS
-
-echo "  - enabling demo accounts logins in application-users.properties file..."
-echo
-cp $SUPPORT_DIR/application-users.properties $SERVER_CONF
+java -jar $SRC_DIR/$BPMS $SUPPORT_DIR/installation-bpms -variablefile $SUPPORT_DIR/installation-bpms.variables
 
 echo "  - enabling demo accounts role setup in application-roles.properties file..."
 echo
 cp $SUPPORT_DIR/application-roles.properties $SERVER_CONF
+
+echo "  - setting up demo projects..."
+echo
+cp -r $SUPPORT_DIR/bpm-suite-demo-niogit $SERVER_BIN/.niogit
+
+echo "Deploying web service that pulls out credit report of customer based on SSN..."
+echo
+cp $SUPPORT_DIR/$WEBSERVICE $SERVER_DIR
 
 echo "  - setting up standalone.xml configuration adjustments..."
 echo
@@ -98,15 +86,6 @@ echo "  - making sure standalone.sh for server is executable..."
 echo
 chmod u+x $JBOSS_HOME/bin/standalone.sh
 
-echo "  - setting up demo projects..."
-echo
-cp -r $SUPPORT_DIR/bpm-suite-demo-niogit $SERVER_BIN/.niogit
-cp -r $SUPPORT_DIR/bpm-suite-demo-index $SERVER_BIN/.index
-
-echo "Deploying web service that pulls out credit report of customer based on SSN..."
-echo
-cp $SUPPORT_DIR/$WEBSERVICE $SERVER_DIR
-
 # Optional: uncomment this to install mock data for BPM Suite.
 #
 #echo - setting up mock bpm dashboard data...
@@ -115,15 +94,18 @@ cp $SUPPORT_DIR/$WEBSERVICE $SERVER_DIR
 
 echo "You can now start the $PRODUCT with $SERVER_BIN/standalone.sh"
 echo
-
-echo "PRE-LOAD MORTGAGE DEMO"
-echo "======================"
+echo "Login into business central at:"
+echo
+echo "    http://localhost:8080/business-central  (u:erics / p:bpmsuite1!)"
+echo
+echo "PRE-LOAD DEMO"
+echo "============="
 echo "To load the BPM with a set of process instances, you can run the following command"
 echo "after you start JBoss BPM Suite, build and deploy the mortgage project, then you can"
 echo "use the helper jar file found in the support directory as follows:"
 echo 
-echo "   java -jar jboss-mortgage-demo-client.jar erics bpmsuite" 
+echo "   java -jar jboss-mortgage-demo-client.jar erics bpmsuite1!" 
 echo
-
 echo "$PRODUCT $VERSION $DEMO Setup Complete."
 echo
+

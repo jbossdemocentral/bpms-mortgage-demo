@@ -5,7 +5,7 @@ JBoss BPM Suite Mortgage Demo
 Quickstart
 ----------
 
-1. Clone project.
+1. [Download and unzip.](https://github.com/eschabell/bpms-mortgage-demo/archive/master.zip)
 
 2. Add products to installs directory.
 
@@ -16,13 +16,7 @@ Quickstart
 5. Login to http://localhost:8080/business-central  
 
 ```
-  - login for admin role (u:erics / p:bpmsuite)
-
-  - login for appraisor role (u:alan / p:bpmsuite)
-
-  - login for broker role (u:bob / p:bpmsuite)
-
-  - login for manager role (u:mary / p:bpmsuite)
+  - login for admin, appraisor, broker, and manager roles (u:erics / p:bpmsuite1!)
 ```
 
 6. Mortgage Loan demo pre-installed as project.
@@ -34,7 +28,7 @@ rejected path, some will be waiting for you in the various human task when you l
 requests just run the client jar from a command line shell. You can run the following command from the 'support' directory:
 
 ```
-   java -jar jboss-mortgage-demo-client.jar erics bpmsuite
+   java -jar jboss-mortgage-demo-client.jar erics bpmsuite1!
 ```
 
 Notes
@@ -80,6 +74,8 @@ Released versions
 -----------------
 
 See the tagged releases for the following versions of the product:
+
+- v1.4 - JBoss BPM Suite 6.0.2 installer used, with mortgage demo installed.
 
 - v1.3 - JBoss BPM Suite 6.0.2, JBoss EAP 6.1.1, and mortgage demo installed.
 
