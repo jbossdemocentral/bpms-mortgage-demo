@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <artifactId>bpm-example-parent</artifactId>
+    <groupId>org.jboss</groupId>
+    <version>6.1.0</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>mortgage-demo-client</artifactId>
+  <name>JBoss BPM Example App Client</name>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-shade-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <transformers>
+                <transformer />
+                <transformer>
+                  <mainClass>com.redhat.bpms.examples.mortgage.CreateProcesses</mainClass>
+                </transformer>
+              </transformers>
+              <artifactSet>
+                <includes>
+                  <include>org.jboss:bpm-example-parent</include>
+                  <include>org.jboss:mortgage-demo-datamodel</include>
+                  <include>org.drools:drools-core</include>
+                  <include>org.jbpm:jbpm-human-task-core</include>
+                  <include>org.jbpm:jbpm-audit</include>
+                  <include>org.kie:kie-api</include>
+                  <include>org.kie:kie-internal</include>
+                  <include>org.kie.remote:kie-services-client</include>
+                  <include>org.kie.remote:kie-services-jaxb</include>
+                  <include>org.jboss.spec.javax.servlet:jboss-servlet-api_3.0_spec</include>
+                  <include>org.jboss.spec.javax.ws.rs:jboss-jaxrs-api_1.1_spec</include>
+                  <include>org.jboss.resteasy:jaxrs-api</include>
+                  <include>commons-codec:commons-codec</include>
+                  <include>commons-io:commons-io</include>
+                  <include>commons-logging:commons-logging</include>
+                  <include>org.jboss.resteasy:resteasy-jaxb-provider</include>
+                  <include>org.jboss.resteasy:resteasy-jaxrs</include>
+                  <include>org.apache.httpcomponents:httpclient</include>
+                  <include>org.apache.httpcomponents:httpcore</include>
+                  <include>org.slf4j:slf4j-api</include>
+                  <include>org.slf4j:jcl-over-slf4j</include>
+                  <include>org.jboss.logmanager:jboss-logmanager</include>
+                  <include>org.jboss.slf4j:slf4j-jboss-logmanager</include>
+                  <include>org.jboss.spec.javax.jms:jboss-jms-api_1.1_spec</include>
+                  <include>com.sun.xml.bind:jaxb-impl</include>
+                  <include>com.sun.istack:istack-commons-runtime</include>
+                  <include>com.sun.xml.txw2:txw2</include>
+                </includes>
+              </artifactSet>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+

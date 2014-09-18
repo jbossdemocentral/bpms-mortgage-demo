@@ -59,6 +59,8 @@ The following functionality is covered:
 
 Note that the entire demo is running default in memory, restart server, lose your process instances, data, monitoring history.
 
+Sources for the demo client jar can be found in the projects directory.
+
 
 Supporting Articles
 -------------------
@@ -74,6 +76,8 @@ Released versions
 -----------------
 
 See the tagged releases for the following versions of the product:
+
+- v1.5 - JBoss BPM Suite 6.0.2 installer used, with mortgage demo installed and demo client jar sources added.
 
 - v1.4 - JBoss BPM Suite 6.0.2 installer used, with mortgage demo installed.
 

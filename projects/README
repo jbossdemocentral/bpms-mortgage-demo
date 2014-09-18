@@ -9,3 +9,5 @@ This is READ_ONLY, if you want to push back changes:
 $ git clone ssh://erics@localhost:8001/MortgageApplication
 
 It will ask for passwords on push, use 'bpmsuite'.
+
+Added in demo-client code for building client demo jar from sources.
