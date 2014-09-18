@@ -28,7 +28,7 @@
   <name>JBoss BPM Example App parent</name>
   <artifactId>bpm-example-parent</artifactId>
   <groupId>org.jboss</groupId>
-  <version>6.1.0</version>
+  <version>1.0</version>
   <packaging>pom</packaging>
 
   <properties>
