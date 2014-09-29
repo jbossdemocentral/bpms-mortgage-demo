@@ -10,9 +10,9 @@ SERVER_BIN=$JBOSS_HOME/bin
 SRC_DIR=./installs
 SUPPORT_DIR=./support
 PRJ_DIR=./projects/mortgage-demo
-BPMS=jboss-bpms-installer-6.0.2.GA-redhat-5.jar
+BPMS=jboss-bpms-installer-6.0.3.GA-redhat-1.jar
 WEBSERVICE=jboss-mortgage-demo-ws.war
-VERSION=6.0.2.GA
+VERSION=6.0.3
 
 # wipe screen.
 clear 
