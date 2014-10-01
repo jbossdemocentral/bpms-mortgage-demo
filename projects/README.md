@@ -11,4 +11,4 @@ $ git clone ssh://erics@localhost:8001/MortgageApplication
 
 It will ask for passwords on push, use password found on main README.
 
-Added in demo-client code for building client demo jar from sources.
+Added in demo source code for building client demo jar, data model and web serice war from sources.

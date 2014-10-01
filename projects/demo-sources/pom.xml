@@ -38,6 +38,7 @@
   <modules>
     <module>mortgage-demo-datamodel</module>
     <module>mortgage-demo-client</module>
+    <module>mortgage-demo-ws</module>
   </modules>
 
   <dependencyManagement>
