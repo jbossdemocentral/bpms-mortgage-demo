@@ -2,18 +2,19 @@
 <AutomatedInstallation langpack="eng">
 <com.izforge.izpack.panels.HTMLLicencePanel id="HTMLLicencePanel"/>
 <com.izforge.izpack.panels.TargetPanel id="DirectoryPanel">
-<installpath>target</installpath>
+<installpath>target/jboss-eap-6.3</installpath>
 </com.izforge.izpack.panels.TargetPanel>
 <com.izforge.izpack.panels.UserInputPanel id="security">
 <userInput>
-<entry autoPrompt="true" key="adminPassword"/>
 <entry key="adminUser" value="erics"/>
+<entry autoPrompt="true" key="adminPassword"/>
 </userInput>
 </com.izforge.izpack.panels.UserInputPanel>
 <com.izforge.izpack.panels.UserInputPanel id="bpmsUser">
 <userInput>
 <entry key="bpms.user" value="erics"/>
 <entry autoPrompt="true" key="bpms.password"/>
+<entry key="bpms.user.additional.roles" value="analyst,manager,user,admin,appraiser,broker,loanOfficer"/>
 </userInput>
 </com.izforge.izpack.panels.UserInputPanel>
 <com.izforge.izpack.panels.UserInputPanel id="JavaSecurityManager">
@@ -23,9 +24,10 @@
 </com.izforge.izpack.panels.UserInputPanel>
 <com.izforge.izpack.panels.UserInputPanel id="ClientKeystores">
 <userInput>
-<entry key="generated.keystores.client.number" value="1"/>
 <entry autoPrompt="true" key="generated.keystores.server.storepass"/>
 <entry autoPrompt="true" key="generated.keystores.client.storepass"/>
+<entry key="generateClientKeystores" value="true"/>
+<entry key="generated.keystores.client.number" value="1"/>
 </userInput>
 </com.izforge.izpack.panels.UserInputPanel>
 <com.izforge.izpack.panels.UserInputPanel id="pureIPv6">
@@ -35,7 +37,12 @@
 </com.izforge.izpack.panels.UserInputPanel>
 <com.izforge.izpack.panels.UserInputPanel id="postinstall">
 <userInput>
-<entry key="postinstallServer" value="false"/>
+<entry key="postinstallServer" value="true"/>
+<entry key="installVault" value="false"/>
+<entry key="installSsl" value="false"/>
+<entry key="ldapMgmtConsole" value="false"/>
+<entry key="ldapBusinessCentral" value="false"/>
+<entry key="installSecurityDomain" value="false"/>
 </userInput>
 </com.izforge.izpack.panels.UserInputPanel>
 <com.izforge.izpack.panels.UserInputPanel id="vaultsecurity"/>
@@ -46,9 +53,10 @@
 </userInput>
 </com.izforge.izpack.panels.UserInputPanel>
 <com.izforge.izpack.panels.UserInputPanel id="sslsecurity"/>
-<com.izforge.izpack.panels.UserInputPanel id="ldapsecurity"/>
-<com.izforge.izpack.panels.UserInputPanel id="ldapsecurity2"/>
-<com.izforge.izpack.panels.UserInputPanel id="securitydomain"/>
+<com.izforge.izpack.panels.UserInputPanel id="ldapconnection"/>
+<com.izforge.izpack.panels.UserInputPanel id="ldapmgmtconsole"/>
+<com.izforge.izpack.panels.UserInputPanel id="ldapbusinesscentral"/>
+<com.redhat.installer.asconfiguration.securitydomain.panel.SecurityDomainPanel id="securitydomain"/>
 <com.izforge.izpack.panels.UserInputPanel id="jsssecuritydomain"/>
 <com.izforge.izpack.panels.SummaryPanel id="SummaryPanel"/>
 <com.izforge.izpack.panels.InstallPanel id="InstallPanel"/>

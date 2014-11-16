@@ -3,16 +3,16 @@ DEMO="Mortgage Demo"
 AUTHORS="Babak Mozaffari, Eric D. Schabell"
 PROJECT="git@github.com:eschabell/bpms-mortgage-demo.git"
 PRODUCT="JBoss BPM Suite"
-JBOSS_HOME=./target/jboss-eap-6.1
+JBOSS_HOME=./target/jboss-eap-6.3
 SERVER_DIR=$JBOSS_HOME/standalone/deployments/
 SERVER_CONF=$JBOSS_HOME/standalone/configuration/
 SERVER_BIN=$JBOSS_HOME/bin
 SRC_DIR=./installs
 SUPPORT_DIR=./support
 PRJ_DIR=./projects/mortgage-demo
-BPMS=jboss-bpms-installer-6.0.3.GA-redhat-1.jar
+BPMS=jboss-bpmsuite-installer-6.1.0.ER2.jar
 WEBSERVICE=jboss-mortgage-demo-ws.war
-VERSION=6.0.3
+VERSION=6.1.ER
 
 # wipe screen.
 clear 
@@ -41,7 +41,7 @@ echo
 command -v mvn -q >/dev/null 2>&1 || { echo >&2 "Maven is required but not installed yet... aborting."; exit 1; }
 
 # make some checks first before proceeding.	
-if [[ -r $SRC_DIR/$BPMS || -L $SRC_DIR/$BPMS ]]; then
+if [ -r $SRC_DIR/$BPMS ] || [ -L $SRC_DIR/$BPMS ]; then
 	echo Product sources are present...
 	echo
 else
