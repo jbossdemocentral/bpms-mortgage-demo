@@ -78,7 +78,8 @@
     <repository>
       <id>jboss-public-repository-group</id>
       <name>JBoss Public Repository Group</name>
-			<url>http://maven.repository.redhat.com/techpreview/all/</url>
+<!--			<url>http://maven.repository.redhat.com/techpreview/all/</url>  -->
+			<url>http://download.lab.bos.redhat.com/brewroot/repos/jb-ip-6.1-build/latest/maven/</url>
       <releases>
         <enabled>true</enabled>
         <updatePolicy>never</updatePolicy>

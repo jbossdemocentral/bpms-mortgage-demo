@@ -34,6 +34,7 @@
     <dependency>
       <groupId>org.kie.remote</groupId>
       <artifactId>kie-services-client</artifactId>
+			<version>${version.org.kie}</version>
     </dependency>
     <dependency>
       <groupId>org.kie.remote</groupId>

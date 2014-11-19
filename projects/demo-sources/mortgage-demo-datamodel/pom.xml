@@ -14,10 +14,10 @@
   <description>Mortgage application to demo basic features of BPMS 6</description>
 
   <dependencies>
-
     <dependency>
       <groupId>org.kie.remote</groupId>
       <artifactId>kie-services-client</artifactId>
+			<version>${version.org.kie}</version>
     </dependency>
   </dependencies>
 
