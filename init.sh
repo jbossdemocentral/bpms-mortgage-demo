@@ -1,7 +1,7 @@
 #!/bin/sh 
 DEMO="Mortgage Demo"
 AUTHORS="Babak Mozaffari, Eric D. Schabell"
-PROJECT="git@github.com:eschabell/bpms-mortgage-demo.git"
+PROJECT="git@github.com:jbossdemocentral/bpms-mortgage-demo.git"
 PRODUCT="JBoss BPM Suite"
 JBOSS_HOME=./target/jboss-eap-6.1
 SERVER_DIR=$JBOSS_HOME/standalone/deployments/
@@ -33,7 +33,7 @@ echo "##                                                             ##"
 echo "##  brought to you by,                                         ##"   
 echo "##             ${AUTHORS}               ##"
 echo "##                                                             ##"   
-echo "##  ${PROJECT}            ##"
+echo "##  ${PROJECT}     ##"
 echo "##                                                             ##"   
 echo "#################################################################"
 echo

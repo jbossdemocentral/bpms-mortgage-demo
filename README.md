@@ -5,7 +5,7 @@ JBoss BPM Suite Mortgage Demo
 Quickstart
 ----------
 
-1. [Download and unzip.](https://github.com/eschabell/bpms-mortgage-demo/archive/master.zip)
+1. [Download and unzip.](https://github.com/jbossdemocentral/bpms-mortgage-demo/archive/master.zip)
 
 2. Add products to installs directory.
 
@@ -77,6 +77,8 @@ Released versions
 
 See the tagged releases for the following versions of the product:
 
+- v1.6 - moved to JBoss Demo Central.
+ 
 - v1.6 - JBoss BPM Suite 6.0.3 installer with mortgage demo installed.
 
 - v1.5 - JBoss BPM Suite 6.0.2 installer used, with mortgage demo installed and demo client jar sources added.
@@ -106,7 +108,7 @@ See the tagged releases for the following versions of the product:
 - v0.1 - JBoss BPM Suite ER3, JBoss EAP 6.0, and mortgage demo installed.
 
 
-![Mortgage Process](https://github.com/eschabell/bpms-mortgage-demo/blob/master/docs/demo-images/mortgage-process.png?raw=true)
+![Mortgage Process](https://github.com/jbossdemocentral/bpms-mortgage-demo/blob/master/docs/demo-images/mortgage-process.png?raw=true)
 
-![Process and Task Dashboard](https://github.com/eschabell/bpms-mortgage-demo/blob/master/docs/demo-images/mock-bpm-data.png?raw=true)
+![Process and Task Dashboard](https://github.com/jbossdemocentral/bpms-mortgage-demo/blob/master/docs/demo-images/mock-bpm-data.png?raw=true)
 
