@@ -6,13 +6,13 @@ set DEMO=Mortgage Demo
 set AUTHORS=Babak Mozaffari, Eric D. Schabell
 set PROJECT=git@github.com:jbossdemocentral/bpms-mortgage-demo.git
 set PRODUCT=JBoss BPM Suite
-set JBOSS_HOME=%PROJECT_HOME%\target\jboss-eap-6.1
+set JBOSS_HOME=%PROJECT_HOME%target\jboss-eap-6.1
 set SERVER_DIR=%JBOSS_HOME%\standalone\deployments\
 set SERVER_CONF=%JBOSS_HOME%\standalone\configuration\
 set SERVER_BIN=%JBOSS_HOME%\bin
-set SRC_DIR=%PROJECT_HOME%\installs
-set SUPPORT_DIR=%PROJECT_HOME%\support
-set PRJ_DIR=%PROJECT_HOME%\projects\mortgage-demo
+set SRC_DIR=%PROJECT_HOME%installs
+set SUPPORT_DIR=%PROJECT_HOME%support
+set PRJ_DIR=%PROJECT_HOME%projects\mortgage-demo
 set BPMS=jboss-bpms-installer-6.0.3.GA-redhat-1.jar
 set WEBSERVICE=jboss-mortgage-demo-ws.war
 set VERSION=6.0.3
@@ -69,7 +69,13 @@ if exist %JBOSS_HOME% (
 REM Run installer.
 echo Product installer running now...
 echo.
-java -jar %SRC_DIR%/%BPMS% %SUPPORT_DIR%\installation-bpms -variablefile %SUPPORT_DIR%\installation-bpms.variables
+call java -jar %SRC_DIR%/%BPMS% %SUPPORT_DIR%\installation-bpms -variablefile %SUPPORT_DIR%\installation-bpms.variables
+
+if not "%ERRORLEVEL%" == "0" (
+	echo Error Occurred During %PRODUCT% Installation!
+	echo.
+	GOTO :EOF
+)
 
 echo - enabling demo accounts role setup in application-roles.properties file...
 echo.
