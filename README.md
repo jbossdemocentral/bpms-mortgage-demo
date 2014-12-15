@@ -77,7 +77,7 @@ Released versions
 
 See the tagged releases for the following versions of the product:
 
-- v1.6 - moved to JBoss Demo Central.
+- v1.7 - moved to JBoss Demo Central, updated windows init.bat support.
  
 - v1.6 - JBoss BPM Suite 6.0.3 installer with mortgage demo installed.
 
