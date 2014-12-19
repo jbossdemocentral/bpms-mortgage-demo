@@ -1,10 +1,28 @@
 JBoss BPM Suite Mortgage Demo 
 =============================
+The example project mortgage demo that is delivered with the JBoss BPM product.
+
+Install with one click in xPaaS (bpmPaaS)
+-----------------------------------------
+After clicking button, ensure `Gear` size is set to `medium`:
+
+[![Click to install OpenShift](http://launch-shifter.rhcloud.com/launch/light/Install bpmPaaS.svg)](https://openshift.redhat.com/app/console/application_type/custom?&cartridges[]=https://raw.githubusercontent.com/jbossdemocentral/cartridge-bpmPaaS-mortgage-demo/master/metadata/manifest.yml&name=bpmpaasmortgage&gear_profile=medium&initial_git_url=)
+
+Once installed you can use the JBoss BPM Suite logins: 
+
+   * u:erics   p: bpmsuite  (admin)
+
+   * u: alan   p: bpmsuite  (analyst)
+
+   * u: daniel p: bpmsuite (developer)
+
+   * u: ursla  p: bpmsuite (user)
+
+   * u: mary   p: bpmsuite (manager)
 
 
-Quickstart
-----------
-
+Install on your machine
+-----------------------
 1. [Download and unzip.](https://github.com/jbossdemocentral/bpms-mortgage-demo/archive/master.zip)
 
 2. Add products to installs directory.
@@ -77,7 +95,7 @@ Released versions
 
 See the tagged releases for the following versions of the product:
 
-- v1.7 - moved to JBoss Demo Central, updated windows init.bat support.
+- v1.7 - moved to JBoss Demo Central, updated windows init.bat support and one click install button.
  
 - v1.6 - JBoss BPM Suite 6.0.3 installer with mortgage demo installed.
 
