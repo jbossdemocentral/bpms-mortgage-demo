@@ -66,7 +66,7 @@ The following steps can be used to configure and run the demo in a docker contai
 4. Start demo container
 
 	```
-	docker run --it -p 8080:8080 -p 9990:9990 jbossdemocentral/mortgage-demo
+	docker run --it -p 8080:8080 -p 9990:9990 jbossdemocentral/bpms-mortgage-demo
 	```
 5. Login to http://localhost:8080/business-central  
 
