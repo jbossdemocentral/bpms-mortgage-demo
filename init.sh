@@ -1,6 +1,6 @@
 #!/bin/sh 
 DEMO="Mortgage Demo"
-AUTHORS="Babak Mozaffari, Eric D. Schabell"
+AUTHORS="Babak Mozaffari, Andrew Block, Eric D. Schabell"
 PROJECT="git@github.com:jbossdemocentral/bpms-mortgage-demo.git"
 PRODUCT="JBoss BPM Suite"
 JBOSS_HOME=./target/jboss-eap-6.1
@@ -31,7 +31,7 @@ echo "##     ####  #     #     #    ###  ##### #####   #   #####     ##"
 echo "##                                                             ##"   
 echo "##                                                             ##"   
 echo "##  brought to you by,                                         ##"   
-echo "##             ${AUTHORS}               ##"
+echo "##            ${AUTHORS}  ##"
 echo "##                                                             ##"   
 echo "##  ${PROJECT}     ##"
 echo "##                                                             ##"   
