@@ -1,10 +1,7 @@
 {
   "name":"JBoss BPM Suite Mortgage Demo",
-  "summary":"The example project mortgage demo that is delivered with the JBoss BPM product, features BPM with task integration,
-rule integration, web service with exception handling, and multiple swimlanes for task assignments.
-
-Install options - local, OpenShift and Docker.",
-  "author":"Babak Mozaffari, Andrew Block, Eric D. Schabell"
+  "summary":"The example project mortgage demo that is delivered with the JBoss BPM product, features BPM with task integration, rule integration, web service with exception handling, and multiple swimlanes for task assignments. Install options - local, OpenShift and Docker.",
+  "author":"Babak Mozaffari, Andrew Block, Eric D. Schabell", 
   "categories":["brms","bpms"],
   "level":"Easy Peasy",
   "published":true,
