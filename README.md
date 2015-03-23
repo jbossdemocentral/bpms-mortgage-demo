@@ -121,6 +121,8 @@ The following functionality is covered:
 
 - Helper jar to pre-load with sixteen process instances in various states.
 
+For 'Appraisal' task only, any claimed tasks that are not competed within a minute will be reassigned automatically back into the group for processing.
+
 Note that the entire demo is running default in memory, restart server, lose your process instances, data, monitoring history.
 
 Sources for the demo client jar can be found in the projects directory.
@@ -146,6 +148,8 @@ Supporting Articles
 Released versions
 -----------------
 See the tagged releases for the following versions of the product:
+
+- v1.9 - JBoss BPM Suite 6.0.3 with automated task reassignment.
 
 - v1.8 - JBoss BPM Suite 6.0.3 with optional docker installation.
 
