@@ -32,6 +32,8 @@
       <property name="org.uberfire.nio.git.dir" value="${jboss.home.dir}/bin"/>
       <property name="org.uberfire.metadata.index.dir" value="${jboss.home.dir}/bin"/>
       <property name="org.guvnor.m2repo.dir" value="${jboss.home.dir}/bin"/>
+			<property name="org.kie.mail.session" value="java:jboss/mail/Default"/>
+			<!-- property name="org.kie.example.repositories" value="${jboss.server.config.dir}/initial"/  -->
    </system-properties>
    <management>
       <security-realms>
