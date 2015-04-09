@@ -20,7 +20,7 @@
   <parent>
     <groupId>org.jboss</groupId>
     <artifactId>bpm-example-parent</artifactId>
-    <version>6.1.0.GA-redhat-1</version>
+    <version>6.1.0.GA-redhat-2</version>
   </parent>
 
   <name>JBoss BPM Example App Client</name>

@@ -3,7 +3,7 @@
   <parent>
     <artifactId>bpm-example-parent</artifactId>
     <groupId>org.jboss</groupId>
-    <version>6.1.0.GA-redhat-1</version>
+    <version>6.1.0.GA-redhat-2</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <artifactId>mortgage-demo-client</artifactId>
