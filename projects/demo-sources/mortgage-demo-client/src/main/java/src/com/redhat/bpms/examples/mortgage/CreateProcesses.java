@@ -109,7 +109,12 @@ public class CreateProcesses
 		try
 		{
 			URL jbpmURL = new URL( applicationContext );
-			RemoteRestRuntimeFactory remoteRestSessionFactory = new RemoteRestRuntimeFactory( deploymentId, jbpmURL, userId, password );
+			RemoteRestRuntimeEngineFactory remoteRestSessionFactory = RemoteRestRuntimeEngineFactory.newBuilder()
+				.addDeploymentId(deploymentId)
+				.addUrl(jbpmURL)
+				.addUserName(userId)
+				.addPassword(password)
+				.buildFactory();
 			RuntimeEngine runtimeEngine = remoteRestSessionFactory.newRuntimeEngine();
 			return runtimeEngine;
 		}
@@ -126,7 +131,6 @@ public class CreateProcesses
 		Property property = new Property( address, price );
 		Application application = new Application( applicant, property, null, downPayment, amortization, null, null, null );
 		processVariables.put( "application", application );
-		//Equivalent of http://localhost:8080/jbpm-console/rest/runtime/com.redhat.bpms.examples:mortgage:1/process/com.redhat.bpms.examples.mortgage.MortgageApplication/start?map_name=Babak&map_address=12300%20Wilshire&map_ssn=333224449i&map_income=200000i&map_price=1000000i&map_downPayment=200000i&map_amortization=30i
 		return processVariables;
 	}
 }
