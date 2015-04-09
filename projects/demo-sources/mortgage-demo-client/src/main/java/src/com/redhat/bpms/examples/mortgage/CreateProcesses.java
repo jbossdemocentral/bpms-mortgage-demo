@@ -7,7 +7,7 @@ import java.util.Map;
 
 import org.kie.api.runtime.KieSession;
 import org.kie.api.runtime.manager.RuntimeEngine;
-import org.kie.services.client.api.RemoteRestRuntimeFactory;
+import org.kie.services.client.api.RemoteRestRuntimeEngineFactory;
 
 public class CreateProcesses
 {
@@ -45,8 +45,6 @@ public class CreateProcesses
 		}
 
 		populateSamples( userId, password, applicationContext, deploymentId );
-
-		System.out.println("Successfully loaded processes into your JBoss BPM Suite Server. Check the server log to see the application log outputs.");
 	}
 
 	public static void populateSamples(String userId, String password, String applicationContext, String deploymentId)
@@ -110,11 +108,11 @@ public class CreateProcesses
 		{
 			URL jbpmURL = new URL( applicationContext );
 			RemoteRestRuntimeEngineFactory remoteRestSessionFactory = RemoteRestRuntimeEngineFactory.newBuilder()
-				.addDeploymentId(deploymentId)
-				.addUrl(jbpmURL)
-				.addUserName(userId)
-				.addPassword(password)
-				.buildFactory();
+        .addDeploymentId(deploymentId)
+        .addUrl(jbpmURL)
+        .addUserName(userId)
+        .addPassword(password)
+        .buildFactory();
 			RuntimeEngine runtimeEngine = remoteRestSessionFactory.newRuntimeEngine();
 			return runtimeEngine;
 		}
@@ -131,6 +129,7 @@ public class CreateProcesses
 		Property property = new Property( address, price );
 		Application application = new Application( applicant, property, null, downPayment, amortization, null, null, null );
 		processVariables.put( "application", application );
+		//Equivalent of http://localhost:8080/jbpm-console/rest/runtime/com.redhat.bpms.examples:mortgage:1/process/com.redhat.bpms.examples.mortgage.MortgageApplication/start?map_name=Babak&map_address=12300%20Wilshire&map_ssn=333224449i&map_income=200000i&map_price=1000000i&map_downPayment=200000i&map_amortization=30i
 		return processVariables;
 	}
 }
