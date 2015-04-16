@@ -22,7 +22,7 @@
   <parent>
     <groupId>org.jboss</groupId>
     <artifactId>bpm-example-parent</artifactId>
-    <version>6.1.0</version>
+    <version>6.1.0.GA-redhat-2</version>
   </parent>
   
   <name>JBoss BPM Example App Web Service demo </name>

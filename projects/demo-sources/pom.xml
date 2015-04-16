@@ -22,17 +22,17 @@
   <parent>
     <groupId>org.jboss</groupId>
     <artifactId>jboss-parent</artifactId>
-    <version>10</version>
+    <version>11</version>
   </parent>
 
   <name>JBoss BPM Example App parent</name>
   <artifactId>bpm-example-parent</artifactId>
   <groupId>org.jboss</groupId>
-  <version>1.0</version>
+  <version>6.1.0.GA-redhat-2</version>
   <packaging>pom</packaging>
 
   <properties>
-    <version.org.drools>6.0.2-redhat-6</version.org.drools>
+    <version.org.kie>6.2.0.Final-redhat-4</version.org.kie>
   </properties>
   
   <modules>
@@ -46,19 +46,19 @@
       <dependency>
         <groupId>org.kie</groupId>
         <artifactId>kie-parent-with-dependencies</artifactId>
-        <version>${version.org.drools}</version>
+        <version>${version.org.kie}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>org.kie.remote</groupId>
         <artifactId>kie-services-jaxb</artifactId>
-        <version>${version.org.drools}</version>
+        <version>6.1.0.Final</version>
       </dependency>
       <dependency>
         <groupId>org.jboss.logmanager</groupId>
         <artifactId>jboss-logmanager</artifactId>
-        <version>1.4.3.Final-redhat-1</version>
+        <version>1.5.4.Final-redhat-1</version>
       </dependency>
       <dependency>
         <groupId>org.jboss.slf4j</groupId>
@@ -78,7 +78,8 @@
     <repository>
       <id>jboss-public-repository-group</id>
       <name>JBoss Public Repository Group</name>
-			<url>http://maven.repository.redhat.com/techpreview/all/</url>
+<!--			<url>http://maven.repository.redhat.com/techpreview/all/</url>  -->
+			<url>http://download.lab.bos.redhat.com/brewroot/repos/jb-ip-6.1-build/latest/maven/</url>
       <releases>
         <enabled>true</enabled>
         <updatePolicy>never</updatePolicy>

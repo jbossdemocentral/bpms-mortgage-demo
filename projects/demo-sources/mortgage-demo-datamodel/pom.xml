@@ -6,7 +6,7 @@
   <parent>
     <groupId>org.jboss</groupId>
     <artifactId>bpm-example-parent</artifactId>
-    <version>6.1.0</version>
+    <version>6.1.0.GA-redhat-2</version>
   </parent>
 
   <artifactId>mortgage-demo-datamodel</artifactId>
@@ -14,10 +14,10 @@
   <description>Mortgage application to demo basic features of BPMS 6</description>
 
   <dependencies>
-
     <dependency>
       <groupId>org.kie.remote</groupId>
       <artifactId>kie-services-client</artifactId>
+			<version>6.1.0.Final</version>
     </dependency>
   </dependencies>
 

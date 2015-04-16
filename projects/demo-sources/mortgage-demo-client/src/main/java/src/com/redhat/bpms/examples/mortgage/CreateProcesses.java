@@ -7,7 +7,7 @@ import java.util.Map;
 
 import org.kie.api.runtime.KieSession;
 import org.kie.api.runtime.manager.RuntimeEngine;
-import org.kie.services.client.api.RemoteRestRuntimeFactory;
+import org.kie.services.client.api.RemoteRestRuntimeEngineFactory;
 
 public class CreateProcesses
 {
@@ -45,8 +45,6 @@ public class CreateProcesses
 		}
 
 		populateSamples( userId, password, applicationContext, deploymentId );
-
-		System.out.println("Successfully loaded processes into your JBoss BPM Suite Server. Check the server log to see the application log outputs.");
 	}
 
 	public static void populateSamples(String userId, String password, String applicationContext, String deploymentId)
@@ -109,7 +107,12 @@ public class CreateProcesses
 		try
 		{
 			URL jbpmURL = new URL( applicationContext );
-			RemoteRestRuntimeFactory remoteRestSessionFactory = new RemoteRestRuntimeFactory( deploymentId, jbpmURL, userId, password );
+			RemoteRestRuntimeEngineFactory remoteRestSessionFactory = RemoteRestRuntimeEngineFactory.newBuilder()
+        .addDeploymentId(deploymentId)
+        .addUrl(jbpmURL)
+        .addUserName(userId)
+        .addPassword(password)
+        .buildFactory();
 			RuntimeEngine runtimeEngine = remoteRestSessionFactory.newRuntimeEngine();
 			return runtimeEngine;
 		}

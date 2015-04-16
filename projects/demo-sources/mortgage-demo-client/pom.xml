@@ -13,16 +13,14 @@
   this software; if not, write to the Free ~ Software Foundation, Inc., 51 
   Franklin St, Fifth Floor, Boston, MA ~ 02110-1301 USA, or see the FSF site: 
   http://www.fsf.org. -->
-
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
     <groupId>org.jboss</groupId>
     <artifactId>bpm-example-parent</artifactId>
-    <version>6.1.0</version>
+    <version>6.1.0.GA-redhat-2</version>
   </parent>
 
   <name>JBoss BPM Example App Client</name>
@@ -33,11 +31,11 @@
 
     <dependency>
       <groupId>org.kie.remote</groupId>
-      <artifactId>kie-services-client</artifactId>
+      <artifactId>kie-remote-client</artifactId>
     </dependency>
     <dependency>
       <groupId>org.kie.remote</groupId>
-      <artifactId>kie-services-jaxb</artifactId>
+      <artifactId>kie-remote-jaxb</artifactId>
     </dependency>
     <dependency>
       <groupId>org.jboss.logmanager</groupId>
@@ -78,7 +76,7 @@
             </goals>
             <configuration>
               <transformers>
-                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"></transformer>
                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                   <mainClass>com.redhat.bpms.examples.mortgage.CreateProcesses</mainClass>
                 </transformer>
@@ -87,13 +85,10 @@
                 <includes>
                   <include>org.jboss:bpm-example-parent</include>
                   <include>org.jboss:mortgage-demo-datamodel</include>
-                  <include>org.drools:drools-core</include>
-                  <include>org.jbpm:jbpm-human-task-core</include>
-                  <include>org.jbpm:jbpm-audit</include>
-                  <include>org.kie:kie-api</include>
-                  <include>org.kie:kie-internal</include>
-                  <include>org.kie.remote:kie-services-client</include>
-                  <include>org.kie.remote:kie-services-jaxb</include>
+                  <include>org.drools:*</include>
+                  <include>org.jbpm:*</include>
+                  <include>org.kie:*</include>
+                  <include>org.kie.remote:*</include>
                   <include>org.jboss.spec.javax.servlet:jboss-servlet-api_3.0_spec</include>
                   <include>org.jboss.spec.javax.ws.rs:jboss-jaxrs-api_1.1_spec</include>
                   <include>org.jboss.resteasy:jaxrs-api</include>
@@ -104,6 +99,10 @@
                   <include>org.jboss.resteasy:resteasy-jaxrs</include>
                   <include>org.apache.httpcomponents:httpclient</include>
                   <include>org.apache.httpcomponents:httpcore</include>
+                  <include>org.codehaus.jackson:jackson-mapper-asl</include>
+                  <include>org.codehaus.jackson:jackson-core-asl</include>
+                  <include>org.codehaus.jackson:jackson-jaxrs</include>
+                  <include>org.codehaus.jackson:jackson-xc</include>
                   <include>org.slf4j:slf4j-api</include>
                   <include>org.slf4j:jcl-over-slf4j</include>
                   <include>org.jboss.logmanager:jboss-logmanager</include>
