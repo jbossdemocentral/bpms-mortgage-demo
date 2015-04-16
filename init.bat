@@ -15,7 +15,7 @@ set SUPPORT_DIR=%PROJECT_HOME%support
 set PRJ_DIR=%PROJECT_HOME%projects\mortgage-demo
 set WEBSERVICE=jboss-bpmsuite-installer-6.1.0.ER2.jar
 set BPMS=jboss-bpmsuite-6.1.0.GA-installer.jar
-set EAP=jboss-eap-6.4.0.CR2-installer.jar
+set EAP=jboss-eap-6.4.0-installer.jar
 set VERSION=6.1
 
 REM wipe screen.
