@@ -189,5 +189,5 @@ See the tagged releases for the following versions of the product:
 
 ![Mortgage Process](https://raw.githubusercontent.com/jbossdemocentral/bpms-mortgage-demo/master/docs/demo-images/mortgage-process.png)
 
-![Process and Task Dashboard](https://raw.githubusercontent.com/jbossdemocentral/bpms-mortgage-demo/master/docs/demo-images/mock-bpm-data.png)
+![BPM Suite](https://raw.githubusercontent.com/jbossdemocentral/bpms-mortgage-demo/master/docs/demo-images/bpmsuite.png)
 
