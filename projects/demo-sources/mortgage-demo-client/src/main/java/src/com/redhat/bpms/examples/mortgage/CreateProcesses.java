@@ -45,6 +45,10 @@ public class CreateProcesses
 		}
 
 		populateSamples( userId, password, applicationContext, deploymentId );
+
+		System.out.println();
+		System.out.println("Demo project has been successfully pre-loaded with sample process instances.");
+		System.out.println();
 	}
 
 	public static void populateSamples(String userId, String password, String applicationContext, String deploymentId)
