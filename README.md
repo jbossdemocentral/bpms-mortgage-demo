@@ -150,6 +150,8 @@ Released versions
 -----------------
 See the tagged releases for the following versions of the product:
 
+- v2.1 - JBoss BPM Suite 6.1 with updated mortgage process installed.
+
 - v2.0 - JBoss BPM Suite 6.1 with mortgage demo installed.
 
 - v1.9 - JBoss BPM Suite 6.0.3 with automated task reassignment.
