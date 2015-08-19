@@ -2,7 +2,7 @@ JBoss BPM Suite Mortgage Demo
 =============================
 The example project mortgage demo that is delivered with the JBoss BPM product.
 
-There are three options available to you for using this demo; local, OpenShift and Docker.
+There are three options available to you for using this demo; local, OpenShift and containerized.
 
 
 Option 1 - Install on your machine
@@ -158,7 +158,7 @@ See the tagged releases for the following versions of the product:
 
 - v1.9 - JBoss BPM Suite 6.0.3 with automated task reassignment.
 
-- v1.8 - JBoss BPM Suite 6.0.3 with optional docker installation.
+- v1.8 - JBoss BPM Suite 6.0.3 with optional containerized installation.
 
 - v1.7 - moved to JBoss Demo Central, updated windows init.bat support and one click install button.
  
