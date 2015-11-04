@@ -1,5 +1,5 @@
 id: jbossdemocentral-bpms-mortgage
-title: The example project mortgage demo that is delivered with the JBoss BPM product.
+title: JBoss BPM Suite Mortgage Demo
 github_repo_url: https://github.com/jbossdemocentral/bpms-mortgage-demo
 technologies:
   - JBoss EAP
