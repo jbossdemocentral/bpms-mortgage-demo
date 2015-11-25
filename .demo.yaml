@@ -1,0 +1,10 @@
+id: jbossdemocentral-bpms-mortgage
+title: JBoss BPM Suite Mortgage Demo
+github_repo_url: https://github.com/jbossdemocentral/bpms-mortgage-demo
+technologies:
+  - JBoss EAP
+  - JBoss BPM Suite
+summary: The example project mortgage demo that is delivered with the JBoss BPM product. There are three options available to you for using this demo; local, OpenShift and containerized.
+level: Beginner
+product: bpmsuite
+author: Babak Mozaffari, Andrew Block, Eric D. Schabell
