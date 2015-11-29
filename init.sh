@@ -11,8 +11,9 @@ SRC_DIR=./installs
 SUPPORT_DIR=./support
 PRJ_DIR=./projects/mortgage-demo
 WEBSERVICE=jboss-mortgage-demo-ws.war
-BPMS=jboss-bpmsuite-6.2.0.GA-installer.jar
-EAP=jboss-eap-6.4.3-installer.jar
+BPMS=jboss-bpmsuite-6.2.0.CR1-installer.jar
+EAP=jboss-eap-6.4.0-installer.jar
+EAP_PATCH=jboss-eap-6.4.4-patch.zip
 VERSION=6.2
 
 # wipe screen.
@@ -52,6 +53,16 @@ else
 	exit
 fi
 
+if [ -r $SRC_DIR/$EAP_PATCH ] || [ -L $SRC_DIR/$EAP_PATCH ]; then
+	echo Product patches are present...
+	echo
+else
+	echo Need to download $EAP_PATCH package from the Customer Portal 
+	echo and place it in the $SRC_DIR directory to proceed...
+	echo
+	exit
+fi
+
 if [ -r $SRC_DIR/$BPMS ] || [ -L $SRC_DIR/$BPMS ]; then
 	echo Product sources are present...
 	echo
@@ -80,22 +91,35 @@ if [ $? -ne 0 ]; then
 	exit
 fi
 
+echo
+echo "Applying JBoss EAP 6.4.4 patch now..."
+echo
+$JBOSS_HOME/bin/jboss-cli.sh --command="patch apply $SRC_DIR/$EAP_PATCH"
+
+if [ $? -ne 0 ]; then
+	echo
+	echo Error occurred during JBoss EAP patching!
+	exit
+fi
+
+echo
 echo Product installer running now...
 echo
 java -jar $SRC_DIR/$BPMS $SUPPORT_DIR/installation-bpms -variablefile $SUPPORT_DIR/installation-bpms.variables
 
 if [ $? -ne 0 ]; then
-	echo Error occurred during $PRODUCT installation
+	echo Error occurred during $PRODUCT installation!
 	exit
 fi
 
+echo
 echo "  - enabling demo accounts role setup in application-roles.properties file..."
 echo
 cp $SUPPORT_DIR/application-roles.properties $SERVER_CONF
 
 echo "  - setting up demo projects..."
 echo
-cp -r $SUPPORT_DIR/bpm-suite-demo-niogit $SERVER_BIN/.niogit
+#cp -r $SUPPORT_DIR/bpm-suite-demo-niogit $SERVER_BIN/.niogit
 
 echo "Deploying web service that pulls out credit report of customer based on SSN..."
 echo
