@@ -13,7 +13,7 @@ set SERVER_BIN=%JBOSS_HOME%\bin
 set SRC_DIR=%PROJECT_HOME%installs
 set SUPPORT_DIR=%PROJECT_HOME%support
 set PRJ_DIR=%PROJECT_HOME%projects\mortgage-demo
-set WEBSERVICE=jboss-bpmsuite-installer-6.1.0.ER2.jar
+set WEBSERVICE=jboss-mortgage-demo-ws.war
 set BPMS=jboss-bpmsuite-6.2.0.GA-installer.jar
 set EAP=jboss-eap-6.4.0-installer.jar
 set EAP_PATCH=jboss-eap-6.4.4-patch.zip
@@ -154,7 +154,7 @@ xcopy /Y /Q "%SUPPORT_DIR%\%WEBSERVICE%" "%SERVER_DIR%"
 echo. 
 
 echo.
-echo You can now start the %PRODUCT% with %SERVER_BIN%\standalone.bat
+echo You can now start the %PRODUCT% with %SERVER_BIN%standalone.bat
 echo.
 
 echo PRE-LOAD MORTGAGE DEMO
