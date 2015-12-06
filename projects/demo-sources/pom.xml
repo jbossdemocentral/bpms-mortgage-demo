@@ -22,23 +22,26 @@
   <parent>
     <groupId>org.jboss</groupId>
     <artifactId>jboss-parent</artifactId>
-    <version>11</version>
+    <version>16</version>
   </parent>
 
   <name>JBoss BPM Example App parent</name>
   <artifactId>bpm-example-parent</artifactId>
   <groupId>org.jboss</groupId>
-  <version>6.1.0.GA-redhat-2</version>
+  <version>6.2.0</version>
   <packaging>pom</packaging>
 
   <properties>
-    <version.org.kie>6.2.0.Final-redhat-4</version.org.kie>
+    <version.org.kie>6.2.0.redhat-1</version.org.kie>
+    <!-- maven-compiler-plugin -->
+    <maven.compiler.target>1.6</maven.compiler.target>
+    <maven.compiler.source>1.6</maven.compiler.source>
   </properties>
   
   <modules>
+    <module>mortgage-demo-ws</module>
     <module>mortgage-demo-datamodel</module>
     <module>mortgage-demo-client</module>
-    <module>mortgage-demo-ws</module>
   </modules>
 
   <dependencyManagement>
@@ -52,18 +55,18 @@
       </dependency>
       <dependency>
         <groupId>org.kie.remote</groupId>
-        <artifactId>kie-services-jaxb</artifactId>
-        <version>6.1.0.Final</version>
+        <artifactId>kie-remote-jaxb</artifactId>
+        <version>${version.org.kie}</version>
       </dependency>
       <dependency>
         <groupId>org.jboss.logmanager</groupId>
         <artifactId>jboss-logmanager</artifactId>
-        <version>1.5.4.Final-redhat-1</version>
+        <version>1.4.0.Final</version>
       </dependency>
       <dependency>
         <groupId>org.jboss.slf4j</groupId>
         <artifactId>slf4j-jboss-logmanager</artifactId>
-        <version>1.0.3.GA-redhat-1</version>
+        <version>1.0.2.GA</version>
       </dependency>
 
       <dependency>
@@ -78,7 +81,10 @@
     <repository>
       <id>jboss-public-repository-group</id>
       <name>JBoss Public Repository Group</name>
-			<url>http://maven.repository.redhat.com/techpreview/all/</url> 
+      <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+			<!-- 
+			<url>http://download.lab.bos.redhat.com/brewroot/repos/jb-ip-6.1-build/latest/maven/</url>
+			-->
       <releases>
         <enabled>true</enabled>
         <updatePolicy>never</updatePolicy>

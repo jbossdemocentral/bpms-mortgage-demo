@@ -6,7 +6,7 @@
 	logallrefupdates = false
 	precomposeunicode = true
 [remote "origin"]
-	url = file:///Users/erics/Downloads/bpms/6.1/jboss-brms-bpmsuite-6.1.0.GA-redhat-1-quickstarts/jboss-bpmsuite-example/mortgage-demo/.git
+	url = file:///Users/erics/demo-projects/bpms/bpms-mortgage-demo/support/bpm-suite-demo-niogit/Mortgages.git
 	fetch = +refs/heads/*:refs/heads/*
 [branch "master"]
 	remote = origin
