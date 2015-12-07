@@ -45,10 +45,6 @@ public class CreateProcesses
 		}
 
 		populateSamples( userId, password, applicationContext, deploymentId );
-
-		System.out.println();
-		System.out.println("Demo project has been successfully pre-loaded with sample process instances.");
-		System.out.println();
 	}
 
 	public static void populateSamples(String userId, String password, String applicationContext, String deploymentId)
@@ -104,6 +100,10 @@ public class CreateProcesses
 		//amortization not offered
 		processVariables = getProcessArgs( "Molly", "12316 Wilshire", 333224446, 200000, 1000000, 100000, 20 );
 		kieSession.startProcess( "com.redhat.bpms.examples.mortgage.MortgageApplication", processVariables );
+
+		System.out.println();
+		System.out.println("Process instances loaded succesfully, see log for details.");
+		System.out.println();
 	}
 
 	private static RuntimeEngine getRuntimeEngine(String applicationContext, String deploymentId, String userId, String password)

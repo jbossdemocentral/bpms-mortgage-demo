@@ -13,14 +13,16 @@
   this software; if not, write to the Free ~ Software Foundation, Inc., 51 
   Franklin St, Fifth Floor, Boston, MA ~ 02110-1301 USA, or see the FSF site: 
   http://www.fsf.org. -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
     <groupId>org.jboss</groupId>
     <artifactId>bpm-example-parent</artifactId>
-    <version>6.1.0.GA-redhat-2</version>
+    <version>6.2.0</version>
   </parent>
 
   <name>JBoss BPM Example App Client</name>
@@ -76,7 +78,7 @@
             </goals>
             <configuration>
               <transformers>
-                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"></transformer>
+                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                   <mainClass>com.redhat.bpms.examples.mortgage.CreateProcesses</mainClass>
                 </transformer>
@@ -109,6 +111,7 @@
                   <include>org.jboss.slf4j:slf4j-jboss-logmanager</include>
                   <include>org.jboss.spec.javax.jms:jboss-jms-api_1.1_spec</include>
                   <include>com.sun.xml.bind:jaxb-impl</include>
+                  <include>com.sun.xml.bind:jaxb-core</include>
                   <include>com.sun.istack:istack-commons-runtime</include>
                   <include>com.sun.xml.txw2:txw2</include>
                 </includes>

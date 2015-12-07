@@ -13,10 +13,11 @@ set SERVER_BIN=%JBOSS_HOME%\bin
 set SRC_DIR=%PROJECT_HOME%installs
 set SUPPORT_DIR=%PROJECT_HOME%support
 set PRJ_DIR=%PROJECT_HOME%projects\mortgage-demo
-set WEBSERVICE=jboss-bpmsuite-installer-6.1.0.ER2.jar
-set BPMS=jboss-bpmsuite-6.1.0.GA-installer.jar
+set WEBSERVICE=jboss-mortgage-demo-ws.war
+set BPMS=jboss-bpmsuite-6.2.0.GA-installer.jar
 set EAP=jboss-eap-6.4.0-installer.jar
-set VERSION=6.1
+set EAP_PATCH=jboss-eap-6.4.4-patch.zip
+set VERSION=6.2
 
 REM wipe screen.
 cls
@@ -53,6 +54,16 @@ if exist %SRC_DIR%\%EAP% (
         GOTO :EOF
 )
 
+if exist %SRC_DIR%\%EAP_PATCH% (
+        echo Product patches are present...
+        echo.
+) else (
+        echo Need to download %EAP_PATCH% package from the Customer Support Portal
+        echo and place it in the %SRC_DIR% directory to proceed...
+        echo.
+        GOTO :EOF
+)
+
 if exist %SRC_DIR%\%BPMS% (
         echo Product sources are present...
         echo.
@@ -83,6 +94,19 @@ if not "%ERRORLEVEL%" == "0" (
 	GOTO :EOF
 )
 
+call set NOPAUSE=true
+
+echo.
+echo Applying JBoss EAP patch now...
+echo.
+call %JBOSS_HOME%/bin/jboss-cli.bat --command="patch apply %SRC_DIR%/%EAP_PATCH% --override-all"
+
+if not "%ERRORLEVEL%" == "0" (
+  echo.
+	echo Error Occurred During JBoss EAP Patch Installation!
+	echo.
+	GOTO :EOF
+)
 
 echo JBoss BPM Suite installer running now...
 echo.
@@ -122,7 +146,7 @@ echo.
 
 echo - setup email task notification users...
 echo.
-xcopy "%SUPPORT_DIR%\userinfo.properties" "%SERVER_DIR%\business-central.war\WEB-INF\classes\"
+xcopy /Y /Q "%SUPPORT_DIR%\userinfo.properties" "%SERVER_DIR%\business-central.war\WEB-INF\classes\"
 
 echo Deploying web service that pulls out credit report of customer based on SSN...
 echo.
@@ -130,7 +154,7 @@ xcopy /Y /Q "%SUPPORT_DIR%\%WEBSERVICE%" "%SERVER_DIR%"
 echo. 
 
 echo.
-echo You can now start the %PRODUCT% with %SERVER_BIN%\standalone.bat
+echo You can now start the %PRODUCT% with %SERVER_BIN%standalone.bat
 echo.
 
 echo PRE-LOAD MORTGAGE DEMO

@@ -3,7 +3,7 @@
   <parent>
     <artifactId>bpm-example-parent</artifactId>
     <groupId>org.jboss</groupId>
-    <version>6.1.0.GA-redhat-2</version>
+    <version>6.2.0</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <artifactId>mortgage-demo-client</artifactId>
@@ -53,6 +53,7 @@
                   <include>org.jboss.slf4j:slf4j-jboss-logmanager</include>
                   <include>org.jboss.spec.javax.jms:jboss-jms-api_1.1_spec</include>
                   <include>com.sun.xml.bind:jaxb-impl</include>
+                  <include>com.sun.xml.bind:jaxb-core</include>
                   <include>com.sun.istack:istack-commons-runtime</include>
                   <include>com.sun.xml.txw2:txw2</include>
                 </includes>
