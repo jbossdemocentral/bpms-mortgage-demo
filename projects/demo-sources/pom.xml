@@ -32,7 +32,7 @@
   <packaging>pom</packaging>
 
   <properties>
-    <version.org.kie>6.2.0.redhat-1</version.org.kie>
+    <version.org.kie>6.3.0.Final-redhat-5</version.org.kie>
     <!-- maven-compiler-plugin -->
     <maven.compiler.target>1.6</maven.compiler.target>
     <maven.compiler.source>1.6</maven.compiler.source>
@@ -81,7 +81,7 @@
     <repository>
       <id>jboss-public-repository-group</id>
       <name>JBoss Public Repository Group</name>
-      <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+			<url>http://maven.repository.redhat.com/techpreview/all/</url>
 			<!-- 
 			<url>http://download.lab.bos.redhat.com/brewroot/repos/jb-ip-6.1-build/latest/maven/</url>
 			-->
