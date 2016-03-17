@@ -7,7 +7,7 @@ MAINTAINER Andrew Block <andy.block@gmail.com>
 # Environment Variables 
 ENV BPMS_HOME /opt/jboss/bpms/jboss-eap-6.4
 ENV BPMS_VERSION_MAJOR 6
-ENV BPMS_VERSION_MINOR 2
+ENV BPMS_VERSION_MINOR 1
 ENV BPMS_VERSION_MICRO 0
 ENV BPMS_VERSION_BUILD GA
 
