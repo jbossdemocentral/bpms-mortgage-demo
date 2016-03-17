@@ -1,16 +1,33 @@
 package com.redhat.bpms.examples.mortgage;
 
+import static org.junit.Assert.*;
+import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.ws.rs.core.HttpHeaders;
+import javax.ws.rs.core.MediaType;
+import javax.xml.bind.DatatypeConverter;
+
+import org.apache.http.client.ResponseHandler;
+import org.apache.http.client.fluent.Request;
+import org.apache.http.client.fluent.Response;
+import org.apache.http.entity.ContentType;
+import org.junit.Test;
 import org.kie.api.runtime.KieSession;
 import org.kie.api.runtime.manager.RuntimeEngine;
 import org.kie.services.client.api.RemoteRestRuntimeEngineFactory;
+import org.kie.services.client.serialization.jaxb.impl.deploy.JaxbDeploymentJobResult;
 
 public class CreateProcesses
 {
+
+    @Test
+    public void runFromTestMethod() {
+        main(new String []{"erics", "bpmsuite1!"});
+    }
 
 	public static void main(String[] args)
 	{
@@ -44,8 +61,63 @@ public class CreateProcesses
 			deploymentId = "com.redhat.bpms.examples:mortgage:1";
 		}
 
+		deployProject( userId, password, applicationContext, deploymentId );
+
 		populateSamples( userId, password, applicationContext, deploymentId );
 	}
+
+    private static void deployProject( String userId, String password, String applicationContext, String deploymentId ) {
+
+        String uriStr = applicationContext + "/rest/deployment/" + deploymentId + "/deploy";
+
+        Request request = Request.Get(uriStr)
+                .addHeader(HttpHeaders.ACCEPT, MediaType.APPLICATION_XML.toString())
+                .addHeader(HttpHeaders.AUTHORIZATION, basicAuthenticationHeader(userId, password));
+
+        ResponseHandler<JaxbDeploymentJobResult> rh = new XmlResponseHandler(ContentType.APPLICATION_XML, 202, JaxbDeploymentJobResult.class);
+
+        Response resp = null;
+        try {
+            resp = request.execute();
+        } catch( Exception e ) {
+            String msg = "Unable to GET " + uriStr + ": " + e.getMessage();
+            System.err.println(msg);
+            e.printStackTrace();
+            fail(msg);
+        }
+
+        JaxbDeploymentJobResult jobResult = null;
+        try {
+            jobResult =  resp.handleResponse(rh);
+        } catch( Exception e ) {
+            String msg = "Failed retrieving response from [GET] " + uriStr;
+            System.err.println(msg);
+            e.printStackTrace();
+            fail(msg);
+        }
+
+        // Eric: I have code to check on the deployment status
+        // (I have a whole class for this in the internal test suite)
+        // but I'm not going to copy/paste that here.
+        // I guess I need to create a kie-remote-client REST deploy API Java client? Hmm..
+        // Another thing for 7.0!
+
+        // instead of checking on the job, we just wait 15 secs
+        try {
+            Thread.sleep(15 *1000);
+        } catch( InterruptedException e ) {
+            // no-op
+        }
+    }
+
+    private static String basicAuthenticationHeader( String user, String password ) {
+        String token = user + ":" + password;
+        try {
+            return "BASIC " + DatatypeConverter.printBase64Binary(token.getBytes("UTF-8"));
+        } catch( UnsupportedEncodingException ex ) {
+            throw new IllegalStateException("Cannot encode with UTF-8", ex);
+        }
+    }
 
 	public static void populateSamples(String userId, String password, String applicationContext, String deploymentId)
 	{
