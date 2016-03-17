@@ -63,34 +63,32 @@ The following steps can be used to configure and run the demo in a container
 
 2. Add product installer to installs directory.
 
-3. Copy contents of support/docker directory to the project root.
-
-4. Build demo image.
+3. Build demo image.
 
 	```
 	docker build -t jbossdemocentral/bpms-mortgage-demo .
 	```
-5. Start demo container.
+4. Start demo container.
 
 	```
 	docker run -it -p 8080:8080 -p 9990:9990 jbossdemocentral/bpms-mortgage-demo
 	```
-6. Login to http://&lt;DOCKER_HOST&gt;:8080/business-central  
+5. Login to http://&lt;DOCKER_HOST&gt;:8080/business-central  
 
     ```
     - login for admin, appraisor, broker, and manager roles (u:erics / p:bpmsuite1!)
     ```
 
-7. Mortgage Loan demo pre-installed as project.
+6. Mortgage Loan demo pre-installed as project.
 
-8. Process and Task dashboard pre-filled with mock data optional now. 
+7. Process and Task dashboard pre-filled with mock data optional now. 
 
-9. You can pre-load the BPM Suite Mortgage project with multiple pre-configured process instances, some will run through the
+8. You can pre-load the BPM Suite Mortgage project with multiple pre-configured process instances, some will run through the
 rejected path, some will be waiting for you in the various human task when you login. To inject these pre-configured
-requests just run the client jar from a command line shell. You can run the following command inside your container from the '/opt/jboss/support' directory:
+requests, invoke the client jar by executing a command in the most recently started container by running the following command in a new command line shell. 
 
     ```
-   java -jar jboss-mortgage-demo-client.jar erics bpmsuite1!
+     docker exec -it $(docker ps -lq) java -jar support/jboss-mortgage-demo-client.jar erics bpmsuite1!
     ```
 
 Additional information can be found in the jbossdemocentral docker [developer repository](https://github.com/jbossdemocentral/docker-developer)
