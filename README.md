@@ -2,7 +2,8 @@ JBoss BPM Suite Mortgage Demo
 =============================
 The example project mortgage demo that is delivered with the JBoss BPM product.
 
-There are three options available to you for using this demo; local, OpenShift and containerized.
+There are four options available to you for using this demo; local, Openshift Online, Red Hat CDK OpenShift Enterprise and
+Containerized.
 
 
 Option 1 - Install on your machine
@@ -55,7 +56,15 @@ Once installed you can use the JBoss BPM Suite logins:
 Current hosting of bpmPaaS is on JBoss BPM Suite 6.0.2 in OpenShift Online.
 
 
-Option 3 - Generate containerized installation
+Option 3 - Install on Red Hat CDK OpenShift Enterprise image
+------------------------------------------------------------
+The following steps can be used to install this demo on OpenShift Enterprise using the
+Red Hat Container Development Kit (CDK)
+
+1. [App Dev Cloud with JBoss BPM Mortgage Demo](https://github.com/redhatdemocentral/rhcs-mortgage-demo)
+
+
+Option 4 - Generate containerized installation
 ----------------------------------------------
 The following steps can be used to configure and run the demo in a container
 
@@ -153,6 +162,8 @@ Supporting Articles
 Released versions
 -----------------
 See the tagged releases for the following versions of the product:
+
+- v2.4 - JBoss BPM Suite 6.2.0, JBoss EAP 6.4.4 with mortgage demo installed and RH CDK on OSE Cloud install option.
 
 - v2.3 - JBoss BPM Suite 6.2.0, JBoss EAP 6.4.4 and OSE aligned containerization.
 
