@@ -140,6 +140,8 @@ Sources for the demo client jar can be found in the projects directory.
 
 Supporting Articles
 -------------------
+- [How to take a Mortgage Finance Process into the Clouds](http://www.schabell.org/2016/04/howto-take-mortgage-finance-process-into-clouds.html)
+
 - [7 Steps to Your First Process with JBoss BPM Suite Starter	Kit](http://www.schabell.org/2015/08/7-steps-first-process-jboss-bpmsuite-starter-kit.html)
 
 - [How You Can Change JBoss BPM Suite the Open Source Way](http://www.schabell.org/2015/08/howto-change-jboss-bpms-opensource-way.html)
