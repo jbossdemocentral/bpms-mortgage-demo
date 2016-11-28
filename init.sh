@@ -168,6 +168,6 @@ echo "= support directory as follows:                                           
 echo "=                                                                          ="
 echo "=   java -jar jboss-mortgage-demo-client.jar erics bpmsuite1!              ="
 echo "=                                                                          ="
-echo "=  $PRODUCT $VERSION $DEMO Setup Complete.                      ="
+echo "=  $PRODUCT $VERSION $DEMO Setup Complete.                       ="
 echo "=                                                                          ="
 echo "============================================================================"
