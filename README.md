@@ -1,9 +1,17 @@
-JBoss BPM Suite Mortgage Demo 
+JBoss BPM Suite Mortgage Demo
 =============================
 The example project mortgage demo that is delivered with the JBoss BPM product.
 
-There are four options available to you for using this demo; local, Openshift Online, Red Hat CDK OpenShift Enterprise and
-Containerized.
+There are four options available to you for using this demo; local, Docker, Openshift Online and Red Hat CDK OpenShift Enterprise.
+
+Software
+--------
+The following software is required to run this demo:
+- JBoss EAP 7.0 installer: https://developers.redhat.com/download-manager/file/jboss-eap-7.0.0-installer.jar
+- JBoss BPM Suite 6.4.0.GA deployable for EAP 7:
+- Git client
+- Maven 3.2+
+- 7-Zip (Windows only): to overcome the Windows 260 character path length limit, we need 7-Zip to unzip the BPM Suite deployable: http://www.7-zip.org/download.html
 
 
 Option 1 - Install on your machine
@@ -12,36 +20,68 @@ Option 1 - Install on your machine
 
 2. Add products to installs directory.
 
-3. Run 'init.sh' or 'init.bat' file. 'init.bat' must be run with Administrative privileges. 
+3. Run 'init.sh' or 'init.bat' file. 'init.bat' must be run with Administrative privileges.
 
 4. Start JBoss BPMS Server by running 'standalone.sh' or 'standalone.bat' in the <path-to-project>/target/jboss-eap-6.4/bin directory.
 
 5. Login to http://localhost:8080/business-central  
 
     ```
-    - login for admin, appraisor, broker, and manager roles (u:erics / p:bpmsuite1!)
+    - login for admin, appraisor, broker, and manager roles (u:bpmsAdmin / p:bpmsuite1!)
     ```
 
 6. Mortgage Loan demo pre-installed as project.
 
-7. Process and Task dashboard pre-filled with mock data optional now. 
+7. Process and Task dashboard pre-filled with mock data optional now.
 
 8. You can pre-load the BPM Suite Mortgage project with multiple pre-configured process instances, some will run through the
 rejected path, some will be waiting for you in the various human task when you login. To inject these pre-configured
 requests just run the client jar from a command line shell. You can run the following command from the 'support' directory:
 
     ```
-   java -jar jboss-mortgage-demo-client.jar erics bpmsuite1!
+   java -jar jboss-mortgage-demo-client.jar bpmsAdmin bpmsuite1!
     ```
 
+Option 2 - Run in Docker
+----------------------------------------------
+The following steps can be used to configure and run the demo in a container
 
-Option 2 - Install with one click in xPaaS (bpmPaaS)
+1. [Download and unzip.](https://github.com/jbossdemocentral/bpms-mortgage-demo/archive/master.zip)
+
+2. Add product installer to installs directory.
+
+3. Run the 'init-docker.sh' or 'init-docker.ps1' file.
+
+5. Start the container: `docker run -it -p 8080:8080 -p 9990:9990 jbossdemocentral/bpms-mortgage-demo`
+
+6. Login to http://&lt;DOCKER_HOST&gt;:8080/business-central  
+
+  ```
+    - login for admin, appraisor, broker, and manager roles (u:bpmsAdmin / p:bpmsuite1!)
+  ```
+
+7. Mortgage Loan demo pre-installed as project.
+
+8. Process and Task dashboard pre-filled with mock data optional now.
+
+9. You can pre-load the BPM Suite Mortgage project with multiple pre-configured process instances, some will run through the
+rejected path, some will be waiting for you in the various human task when you login. To inject these pre-configured
+requests, invoke the client jar by executing a command in the most recently started container by running the following command in a new command line shell.
+
+    ```
+     docker exec -it $(docker ps -lq) java -jar support/jboss-mortgage-demo-client.jar erics bpmsuite1!
+    ```
+
+Additional information can be found in the jbossdemocentral docker [developer repository](https://github.com/jbossdemocentral/docker-developer)
+
+
+Option 3 - Install with one click in xPaaS (bpmPaaS)
 ----------------------------------------------------
 After clicking button, ensure `Gear` size is set to `medium`:
 
 [![Click to install OpenShift](http://launch-shifter.rhcloud.com/launch/light/Install bpmPaaS.svg)](https://openshift.redhat.com/app/console/application_type/custom?&cartridges[]=https://raw.githubusercontent.com/jbossdemocentral/cartridge-bpmPaaS-mortgage-demo/master/metadata/manifest.yml&name=bpmpaasmortgage&gear_profile=medium&initial_git_url=)
 
-Once installed you can use the JBoss BPM Suite logins: 
+Once installed you can use the JBoss BPM Suite logins:
 
    * u:erics   p: bpmsuite  (admin)
 
@@ -56,53 +96,12 @@ Once installed you can use the JBoss BPM Suite logins:
 Current hosting of bpmPaaS is on JBoss BPM Suite 6.0.2 in OpenShift Online.
 
 
-Option 3 - Install on Red Hat CDK OpenShift Enterprise image
+Option 4 - Install on Red Hat CDK OpenShift Enterprise image
 ------------------------------------------------------------
 The following steps can be used to install this demo on OpenShift Enterprise using the
 Red Hat Container Development Kit (CDK)
 
 1. [App Dev Cloud with JBoss BPM Mortgage Demo](https://github.com/redhatdemocentral/rhcs-mortgage-demo)
-
-
-Option 4 - Generate containerized installation
-----------------------------------------------
-The following steps can be used to configure and run the demo in a container
-
-1. [Download and unzip.](https://github.com/jbossdemocentral/bpms-mortgage-demo/archive/master.zip)
-
-2. Add product installer to installs directory.
-
-3. Copy contents of support/docker directory to the project root.
-
-4. Build demo image.
-
-	```
-	docker build -t jbossdemocentral/bpms-mortgage-demo .
-	```
-5. Start demo container.
-
-	```
-	docker run -it -p 8080:8080 -p 9990:9990 jbossdemocentral/bpms-mortgage-demo
-	```
-6. Login to http://&lt;DOCKER_HOST&gt;:8080/business-central  
-
-    ```
-    - login for admin, appraisor, broker, and manager roles (u:erics / p:bpmsuite1!)
-    ```
-
-7. Mortgage Loan demo pre-installed as project.
-
-8. Process and Task dashboard pre-filled with mock data optional now. 
-
-9. You can pre-load the BPM Suite Mortgage project with multiple pre-configured process instances, some will run through the
-rejected path, some will be waiting for you in the various human task when you login. To inject these pre-configured
-requests, invoke the client jar by executing a command in the most recently started container by running the following command in a new command line shell. 
-
-    ```
-     docker exec -it $(docker ps -lq) java -jar support/jboss-mortgage-demo-client.jar erics bpmsuite1!
-    ```
-
-Additional information can be found in the jbossdemocentral docker [developer repository](https://github.com/jbossdemocentral/docker-developer)
 
 
 Notes
@@ -165,6 +164,8 @@ Released versions
 -----------------
 See the tagged releases for the following versions of the product:
 
+- v2.6 - JBoss BPM Suite 6.4.0.GA, JBoss EAP 7.0.0.GA with mortgage demo installed and RH CDK on OSE Cloud install option.
+
 - v2.5 - JBoss BPM Suite 6.3.0, JBoss EAP 6.4.7 with mortgage demo installed and RH CDK on OSE Cloud install option.
 
 - v2.4 - JBoss BPM Suite 6.2.0, JBoss EAP 6.4.4 with mortgage demo installed and RH CDK on OSE Cloud install option.
@@ -182,7 +183,7 @@ See the tagged releases for the following versions of the product:
 - v1.8 - JBoss BPM Suite 6.0.3 with optional containerized installation.
 
 - v1.7 - moved to JBoss Demo Central, updated windows init.bat support and one click install button.
- 
+
 - v1.6 - JBoss BPM Suite 6.0.3 installer with mortgage demo installed.
 
 - v1.5 - JBoss BPM Suite 6.0.2 installer used, with mortgage demo installed and demo client jar sources added.
@@ -215,4 +216,3 @@ See the tagged releases for the following versions of the product:
 ![Mortgage Process](https://raw.githubusercontent.com/jbossdemocentral/bpms-mortgage-demo/master/docs/demo-images/mortgage-process.png)
 
 ![BPM Suite](https://raw.githubusercontent.com/jbossdemocentral/bpms-mortgage-demo/master/docs/demo-images/bpmsuite.png)
-
