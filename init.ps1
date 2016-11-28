@@ -173,21 +173,14 @@ Copy-Item "$SUPPORT_DIR\bpm-suite-demo-niogit\*" "$SERVER_BIN\.niogit\" -force -
 
 ################################# End setup demo projects ##########################################
 
-Write-Host "- Deploying web service that pulls out credit report of customer based on SSN...`n"
+Write-Host "- deploying web service that pulls out credit report of customer based on SSN...`n"
 Copy-Item "$SUPPORT_DIR\$WEBSERVICE" "$SERVER_DIR" -force
-
-Write-Host "- deploying external-client-ui-form-1.0.war to EAP deployments directory`n"
-Copy-Item "$PRJ_DIR\external-client-ui-form\target\external-client-ui-form-1.0.war" "$SERVER_DIR%" -force
 
 Write-Host "- setting up standalone.xml configuration adjustments...`n"
 Copy-Item "$SUPPORT_DIR\standalone.xml" "$SERVER_CONF" -force
 
 Write-Host "- setup email task notification user...`n"
 Copy-Item "$SUPPORT_DIR\userinfo.properties" "$SERVER_DIR\business-central.war\WEB-INF\classes\" -force
-
-echo "Deploying web service that pulls out credit report of customer based on SSN..."
-echo
-cp $SUPPORT_DIR/$WEBSERVICE $SERVER_DIR
 
 # Optional: uncomment this to install mock data for BPM Suite
 #
@@ -198,9 +191,9 @@ Write-Host "====================================================================
 Write-Host "=                                                                          ="
 Write-Host "=  You can now start the $PRODUCT with:                             ="
 Write-Host "=                                                                          ="
-Write-Host "=   $SERVER_BIN\standalone.ps1                          ="
+Write-Host "=   $SERVER_BIN\standalone.ps1      ="
 Write-Host "=       or                                                                 ="
-Write-Host "=   $SERVER_BIN\standalone.bat                          ="
+Write-Host "=   $SERVER_BIN\standalone.bat      ="
 Write-Host "=                                                                          ="
 Write-Host "=  Login into business central at:                                         ="
 Write-Host "=                                                                          ="
@@ -217,6 +210,6 @@ Write-Host "= support directory as follows:                                     
 Write-Host "=                                                                          ="
 Write-Host "=   java -jar jboss-mortgage-demo-client.jar erics bpmsuite1!              ="
 Write-Host "=                                                                          ="
-Write-Host "=  $PRODUCT $VERSION $DEMO Setup Complete.                  ="
+Write-Host "=  $PRODUCT $VERSION $DEMO Setup Complete.                       ="
 Write-Host "=                                                                          ="
 Write-Host "============================================================================"
