@@ -117,8 +117,8 @@ fi
 echo
 echo "  - enabling demo accounts role setup in application-roles.properties file..."
 echo
-$JBOSS_HOME/bin/add-user.sh -a -r ApplicationRealm -u bpmsAdmin -p bpmsuite1! -ro analyst,admin,user,manager,taskuser,reviewerrole,employeebookingrole,kie-server,rest-all --silent
-$JBOSS_HOME/bin/add-user.sh -a -r ApplicationRealm -u erics -p bpmsuite1! -ro analyst,admin,user,manager,taskuser,reviewerrole,employeebookingrole,kie-server,rest-all --silent
+$JBOSS_HOME/bin/add-user.sh -a -r ApplicationRealm -u bpmsAdmin -p bpmsuite1! -ro analyst,admin,appraiser,broker,manager,kie-server,rest-all --silent
+$JBOSS_HOME/bin/add-user.sh -a -r ApplicationRealm -u erics -p bpmsuite1! -ro analyst,admin,appraiser,broker,manager,kie-server,rest-all --silent
 
 echo "  - setting up demo projects..."
 echo
