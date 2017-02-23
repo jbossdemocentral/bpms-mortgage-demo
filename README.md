@@ -164,6 +164,8 @@ Released versions
 -----------------
 See the tagged releases for the following versions of the product:
 
+- v2.6.1 - JBoss BPM Suite 6.4.0.GA, JBoss EAP 7.0.0.GA with mortgage demo installed and RH CDK on OSE Cloud install option.
+
 - v2.6 - JBoss BPM Suite 6.4.0.GA, JBoss EAP 7.0.0.GA with mortgage demo installed and RH CDK on OSE Cloud install option.
 
 - v2.5 - JBoss BPM Suite 6.3.0, JBoss EAP 6.4.7 with mortgage demo installed and RH CDK on OSE Cloud install option.
