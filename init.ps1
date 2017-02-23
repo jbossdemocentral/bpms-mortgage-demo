@@ -155,8 +155,8 @@ If ($unzipProcess.ExitCode -ne 0) {
 Write-Host ""
 
 Write-Host "- enabling demo accounts setup ...`n"
-$argList1 = "-a -r ApplicationRealm -u bpmsAdmin -p 'bpmsuite1!' -ro 'analyst,admin,user,manager,taskuser,reviewerrole,employeebookingrole,kie-server,rest-all' --silent"
-$argList2 = "-a -r ApplicationRealm -u erics -p 'bpmsuite1!' -ro 'analyst,admin,user,manager,taskuser,reviewerrole,employeebookingrole,kie-server,rest-all' --silent"
+$argList1 = "-a -r ApplicationRealm -u bpmsAdmin -p 'bpmsuite1!' -ro 'analyst,admin,appraiser,broker,manager,kie-server,rest-all' --silent"
+$argList2 = "-a -r ApplicationRealm -u erics -p 'bpmsuite1!' -ro 'analyst,admin,appraiser,broker,manager,kie-server,rest-all' --silent"
 try {
 	Invoke-Expression "$JBOSS_HOME\bin\add-user.ps1 $argList1"
   Invoke-Expression "$JBOSS_HOME\bin\add-user.ps1 $argList2"
