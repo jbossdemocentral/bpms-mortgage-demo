@@ -39,6 +39,7 @@ COPY support/bpm-suite-demo-niogit $BPMS_HOME/bin/.niogit
 
 #Create users and add support files
 RUN $BPMS_HOME/bin/add-user.sh -a -r ApplicationRealm -u bpmsAdmin -p bpmsuite1! -ro analyst,admin,appraiser,broker,manager,kie-server,rest-all --silent \
+  && $BPMS_HOME/bin/add-user.sh -a -r ApplicationRealm -u kieserver -p kieserver1! -ro kie-server --silent \
   && $BPMS_HOME/bin/add-user.sh -a -r ApplicationRealm -u erics -p bpmsuite1! -ro analyst,admin,appraiser,broker,manager,kie-server,rest-all --silent
 COPY projects /opt/jboss/bpms-projects
 COPY support/jboss-mortgage-demo-ws.war $BPMS_HOME/standalone/deployments/
