@@ -44,6 +44,7 @@ RUN $BPMS_HOME/bin/add-user.sh -a -r ApplicationRealm -u bpmsAdmin -p bpmsuite1!
 COPY projects /opt/jboss/bpms-projects
 COPY support/jboss-mortgage-demo-ws.war $BPMS_HOME/standalone/deployments/
 COPY support/userinfo.properties $BPMS_HOME/standalone/deployments/business-central.war/WEB-INF/classes/
+COPY support/jbpm.xml $BPMS_HOME/standalone/deployments/business-central.war/org.kie.workbench.KIEWebapp/profiles/
 COPY support/standalone.xml $BPMS_HOME/standalone/configuration/
 COPY support/jboss-mortgage-demo-client.jar /opt/jboss/support/
 
@@ -51,7 +52,7 @@ COPY support/jboss-mortgage-demo-client.jar /opt/jboss/support/
 USER root
 
 # Adjust permissions and cleanup
-RUN chown -R 1000:1000 /opt/jboss/support $BPMS_HOME/standalone/deployments/jboss-mortgage-demo-ws.war $BPMS_HOME/bin/.niogit $BPMS_HOME/standalone/configuration/standalone.xml $BPMS_HOME/standalone/deployments/business-central.war/WEB-INF/classes/userinfo.properties \
+RUN chown -R 1000:1000 /opt/jboss/support $BPMS_HOME/standalone/deployments/jboss-mortgage-demo-ws.war $BPMS_HOME/bin/.niogit $BPMS_HOME/standalone/configuration/standalone.xml $BPMS_HOME/standalone/deployments/business-central.war/WEB-INF/classes/userinfo.properties $BPMS_HOME/standalone/deployments/business-central.war/org.kie.workbench.KIEWebapp/profiles/ \
   && rm -rf /opt/jboss/bpms-projects
 
 # Run as JBoss

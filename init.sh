@@ -133,9 +133,10 @@ echo "  - setting up standalone.xml configuration adjustments..."
 echo
 cp $SUPPORT_DIR/standalone.xml $SERVER_CONF
 
-echo "  - setup email task notification users..."
+echo "  - setting up business-central..."
 echo
 cp $SUPPORT_DIR/userinfo.properties $SERVER_DIR/business-central.war/WEB-INF/classes/
+cp $SUPPORT_DIR/jbpm.xml $SERVER_DIR/business-central.war/org.kie.workbench.KIEWebapp/profiles/
 
 echo "  - making sure standalone.sh for server is executable..."
 echo
