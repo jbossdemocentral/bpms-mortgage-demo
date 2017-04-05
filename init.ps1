@@ -181,8 +181,9 @@ Copy-Item "$SUPPORT_DIR\$WEBSERVICE" "$SERVER_DIR" -force
 Write-Host "- setting up standalone.xml configuration adjustments...`n"
 Copy-Item "$SUPPORT_DIR\standalone.xml" "$SERVER_CONF" -force
 
-Write-Host "- setup email task notification user...`n"
+Write-Host "- setting up business-central...`n"
 Copy-Item "$SUPPORT_DIR\userinfo.properties" "$SERVER_DIR\business-central.war\WEB-INF\classes\" -force
+Copy-Item "$SUPPORT_DIR\jbpm.xml" "$SERVER_DIR\business-central.war\org.kie.workbench.KIEWebapp\profiles\" -force
 
 # Optional: uncomment this to install mock data for BPM Suite
 #
