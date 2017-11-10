@@ -42,8 +42,14 @@ requests just run the client jar from a command line shell. You can run the foll
    java -jar jboss-mortgage-demo-client.jar bpmsAdmin bpmsuite1!
     ```
 
-Option 2 - Run in Docker
-----------------------------------------------
+
+Option 2 - Install on OpenShift
+-------------------------------
+Running this demo in a container on any OpenShift Container Platform is [available at Red Hat Demo Central](https://github.com/redhatdemocentral/rhcs-mortgage-demo).
+
+
+Option 3 - Install in a container
+---------------------------------
 The following steps can be used to configure and run the demo in a container
 
 1. [Download and unzip.](https://github.com/jbossdemocentral/bpms-mortgage-demo/archive/master.zip)
@@ -73,35 +79,6 @@ requests, invoke the client jar by executing a command in the most recently star
     ```
 
 Additional information can be found in the jbossdemocentral docker [developer repository](https://github.com/jbossdemocentral/docker-developer)
-
-
-Option 3 - Install with one click in xPaaS (bpmPaaS)
-----------------------------------------------------
-After clicking button, ensure `Gear` size is set to `medium`:
-
-[![Click to install OpenShift](http://launch-shifter.rhcloud.com/launch/light/Install bpmPaaS.svg)](https://openshift.redhat.com/app/console/application_type/custom?&cartridges[]=https://raw.githubusercontent.com/jbossdemocentral/cartridge-bpmPaaS-mortgage-demo/master/metadata/manifest.yml&name=bpmpaasmortgage&gear_profile=medium&initial_git_url=)
-
-Once installed you can use the JBoss BPM Suite logins:
-
-   * u:erics   p: bpmsuite  (admin)
-
-   * u: alan   p: bpmsuite  (analyst)
-
-   * u: daniel p: bpmsuite (developer)
-
-   * u: ursla  p: bpmsuite (user)
-
-   * u: mary   p: bpmsuite (manager)
-
-Current hosting of bpmPaaS is on JBoss BPM Suite 6.0.2 in OpenShift Online.
-
-
-Option 4 - Install on Red Hat CDK OpenShift Enterprise image
-------------------------------------------------------------
-The following steps can be used to install this demo on OpenShift Enterprise using the
-Red Hat Container Development Kit (CDK)
-
-1. [App Dev Cloud with JBoss BPM Mortgage Demo](https://github.com/redhatdemocentral/rhcs-mortgage-demo)
 
 
 Notes
